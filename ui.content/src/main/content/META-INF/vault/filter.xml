@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/larsenandtoubroapacpartnersandboxprogram" mode="merge"/>
+    <filter root="/content/larsenandtoubroapacpartnersandboxprogram" mode="merge"/>
+    <filter root="/content/dam/larsenandtoubroapacpartnersandboxprogram" mode="merge"/>
+    <filter root="/content/experience-fragments/larsenandtoubroapacpartnersandboxprogram" mode="merge"/>
+</workspaceFilter>
