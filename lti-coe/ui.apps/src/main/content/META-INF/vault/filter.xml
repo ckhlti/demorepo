@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/coe/clientlibs"/>
+    <filter root="/apps/coe/components"/>
+    <filter root="/apps/coe/i18n"/>
+</workspaceFilter>
