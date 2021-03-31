@@ -13,7 +13,23 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+
+<!-- verify if author has turned off default client libs -->
+<sly data-sly-test="${properties.excludeDefaultJS !='excludeDefaultJS'}">
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
     <sly data-sly-call="${clientlib.js @ categories='coe.base'}"/>
 </sly>
+</sly>
 
+<!-- customer page properties -->
+<sly data-sly-use.pageModel="coe.core.models.CustomPageConfigModel">
+    <!-- include custom footer css -->
+    <sly data-sly-list.footerCSS="${pageModel.footerCSSFiles}">
+    	<link rel="stylesheet" href="${footerCSS}" type="text/css">
+	</sly>
+
+    <!-- include custom footer JS -->
+	<sly data-sly-list.footerJS="${pageModel.footerJSFiles}">
+    	<link rel="stylesheet" href="${footerJS}" type="text/css">
+	</sly>
+</sly>

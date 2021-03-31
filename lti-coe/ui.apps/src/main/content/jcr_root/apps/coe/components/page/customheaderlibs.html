@@ -13,8 +13,38 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+
+<!-- Check if author has turned of default styling for the page -->
+<sly data-sly-test="${properties.excludeDefaultStyle !='excludeDefaultStyle'}">
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
-    <sly data-sly-call="${clientlib.css @ categories='coe.base'}">
+    <sly data-sly-call="${clientlib.css @ categories='coe.base'}"/>
+</sly>
 </sly>
 
+<!-- Including Context hub -->
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+
+<!-- add custom properties -->
+<sly data-sly-use.pageModel="coe.core.models.CustomPageConfigModel">
+	<sly data-sly-test.siteClientLibName="${pageModel.siteClientLibName}" />
+
+    <!-- insert site specific CSS files -->
+	<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+	     data-sly-call="${clientlib.css @ categories=siteClientLibName}"/>
+	</sly> 
+
+    <!-- Insert custom meta tag properties -->
+	<div data-sly-list.metaTag="${pageModel.metaTagList}">
+		<meta name="${metaTag.metaName}" content="${metaTag.metaValue}" />
+	</div>
+
+    <!-- include custom header CSS files -->
+	<sly data-sly-list.headerCSS="${pageModel.headerCSSFiles}">
+    	<link rel="stylesheet" href="${headerCSS}" type="text/css">
+	</sly>
+
+    <!-- include custom header JS Files -->
+	<sly data-sly-list.headerJS="${pageModel.headerJSFiles}">
+    	<link rel="stylesheet" href="${headerJS}" type="text/css">
+	</sly>
+</sly>
