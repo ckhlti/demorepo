@@ -4,7 +4,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <groupId>com.consolidated</groupId>
         <artifactId>consolidated-aem-project</artifactId>
         <packaging>pom</packaging>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.1-SNAPSHOT</version>
         <description>consolidated-aem-project</description>
         <modules>
             <module>dispatcher</module>

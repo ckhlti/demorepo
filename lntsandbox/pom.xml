@@ -21,7 +21,7 @@
     <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
     <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <description>larsenandtoubroapacpartnersandboxprogram</description>
 
     <modules>
