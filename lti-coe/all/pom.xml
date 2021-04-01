@@ -74,12 +74,6 @@
                             <type>zip</type>
                             <target>/apps/coe-packages/content/install</target>
                         </embedded>
-                        <embedded>
-                            <groupId>coe</groupId>
-                            <artifactId>coe.ui.config</artifactId>
-                            <type>zip</type>
-                            <target>/apps/coe-packages/application/install</target>
-                        </embedded>
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -181,12 +175,5 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
-        <dependency>
-            <groupId>coe</groupId>
-            <artifactId>coe.ui.config</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-
     </dependencies>
 </project>

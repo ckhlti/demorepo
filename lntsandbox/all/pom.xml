@@ -24,7 +24,7 @@
     <parent>
         <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
         <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -73,6 +73,12 @@
                             <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project.ui.content</artifactId>
                             <type>zip</type>
                             <target>/apps/larsenandtoubroapacpartnersandboxprogram-packages/content/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
+                            <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project.ui.config</artifactId>
+                            <type>zip</type>
+                            <target>/apps/larsenandtoubroapacpartnersandboxprogram-packages/application/install</target>
                         </embedded>
                     </embeddeds>
                 </configuration>
@@ -175,5 +181,12 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
+        <dependency>
+            <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
+            <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project.ui.config</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
+
     </dependencies>
 </project>
