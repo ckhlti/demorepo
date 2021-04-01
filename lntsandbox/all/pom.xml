@@ -74,12 +74,6 @@
                             <type>zip</type>
                             <target>/apps/larsenandtoubroapacpartnersandboxprogram-packages/content/install</target>
                         </embedded>
-                        <embedded>
-                            <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
-                            <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project.ui.config</artifactId>
-                            <type>zip</type>
-                            <target>/apps/larsenandtoubroapacpartnersandboxprogram-packages/application/install</target>
-                        </embedded>
                     </embeddeds>
                 </configuration>
             </plugin>
@@ -181,12 +175,5 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
-        <dependency>
-            <groupId>com.larsenandtoubroapacpartnersandboxprogram</groupId>
-            <artifactId>aem-larsenandtoubroapacpartnersandboxprogram-project.ui.config</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-
     </dependencies>
 </project>

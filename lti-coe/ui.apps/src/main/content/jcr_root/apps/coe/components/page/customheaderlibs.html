@@ -28,11 +28,14 @@
 <sly data-sly-use.pageModel="coe.core.models.CustomPageConfigModel">
 	<sly data-sly-test.siteClientLibName="${pageModel.siteClientLibName}" />
 
-    <!-- insert site specific CSS files -->
+    <!-- insert site specific CSS files client library-->
 	<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
 	     data-sly-call="${clientlib.css @ categories=siteClientLibName}"/>
 	</sly> 
 
+    <!-- insert site specific CSS from DAM -->    
+    <link rel="stylesheet" href="/dam/${siteClientLibName}/css/custom.css" type="text/css">
+    
     <!-- Insert custom meta tag properties -->
 	<div data-sly-list.metaTag="${pageModel.metaTagList}">
 		<meta name="${metaTag.metaName}" content="${metaTag.metaValue}" />
