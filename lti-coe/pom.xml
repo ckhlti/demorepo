@@ -561,7 +561,12 @@ Bundle-DocURL:
                 <version>${aem.sdk.api}</version>
                 <scope>provided</scope>
             </dependency>
-
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.scr.annotations</artifactId>
+				<version>1.9.0</version>
+				<scope>provided</scope>
+			</dependency> 
 
             <!-- Testing -->
             <dependency>
