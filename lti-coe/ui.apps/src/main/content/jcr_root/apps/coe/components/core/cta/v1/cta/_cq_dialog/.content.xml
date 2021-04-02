@@ -189,6 +189,13 @@
                                                         value="_blank"/>
                                                 </items>
                                             </target>
+                                            <buttonicon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Icon class to display as part of button/link"
+                                                fieldLabel="Icon to display in button"
+                                                name="./buttonIcon"
+                                                required="{Boolean}false"/>
                                         </items>
                                         <granite:data
                                             jcr:primaryType="nt:unstructured"

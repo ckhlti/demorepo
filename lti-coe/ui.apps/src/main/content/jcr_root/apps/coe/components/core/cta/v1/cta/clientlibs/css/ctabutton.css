@@ -1,15 +1,52 @@
-/* button class */
-
-.library-cta-button a {
-    border-radius: 0.25rem;
-    display: inline-block;
-    min-width:10px;
-    padding: .5rem 1rem;
+/* COE CTA */
+/* for cta button type */
+.coe-cta-button a{
+    display:inline-flex;
+    line-height:28px;
+}
+.coe-cta-button.button a{
+    background:#00008c;
+    color: #fff;
+    padding:10px 15px;
+    border-radius: 10px;
     text-decoration:none;
-    font-size : 1.6rem;
-    font-weight:normal;
-    vertical-align: middle;
+}
+/* CTA button icon type */
+.coe-cta-button.icon a {
+    line-height:0px;
+    font-size:0px;
+    color:transparent;
+}
+.coe-cta-button.icon .right-arrow {
+    background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    font-size: 0px;
+    color:transparent;
+    background-repeat: no-repeat;
 }
 
+.coe-cta-button span.right-arrow {
+    background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+    display: inline-flex;
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    font-size: 0px;
+    color:transparent;
+    background-repeat: no-repeat;
+    margin-left:10px;
+}
 
-
+/* cta alignment */
+.coe-cta-button.left {
+	text-align:left;
+        }
+.coe-cta-button.right {
+	text-align:right;
+        }
+.coe-cta-button.center {
+	text-align:center;
+        }        

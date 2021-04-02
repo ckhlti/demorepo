@@ -1,1 +1,23 @@
-body {background:green}
+/* ADA */
+.sr-only {
+    display:none
+}
+/* COE CTA */
+/* for cta button type */
+.coe-cta-button.button a{
+    background:#00008c;
+    color: #fff;
+}
+/* CTA button icon type */
+.coe-cta-button.icon a {
+    line-height:0px;
+    font-size:0px;
+    color:transparent;
+}
+.coe-cta-button.icon .right-arrow {
+    background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+}
+
+.coe-cta-button span.right-arrow{
+	background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+    }

@@ -46,34 +46,33 @@ public class CTAButton {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    @Optional
+    @ValueMapValue
     private String componentId;
     
-    @Optional
+    @ValueMapValue
     private String uniqueClassName;
     
-    @Optional
+    @ValueMapValue
     private String ariaLabel;
-    @Optional
+    @ValueMapValue
     private String function;
-    @Optional
+    @ValueMapValue
     private String appearance;
-    @Optional
+    @ValueMapValue
     private String alignment;
-    @Optional
+    @ValueMapValue
     private String buttonText;
-    @Optional
+    @ValueMapValue
     private String modalID;
-    @Optional
+    @ValueMapValue
     private String targetUrl;
-    @Optional
+    @ValueMapValue
     private String target;
-    @Optional
+    @ValueMapValue
     private String iconClass;
 
     @PostConstruct
     protected void init() {
-        LOG.debug("Initiating CTA model");
         if (StringUtils.isEmpty(componentId) && currentResource != null) {
 
 			componentId = GlobalUtil.generateUniqueHashId("cta", currentResource.getPath()); 	//Generate unique component Id
