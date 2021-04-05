@@ -1,0 +1,77 @@
+        .container_login{
+            display: block;
+            width: 1000px;
+            margin: auto;
+            border: 2px solid rgb(10, 2, 10);
+            border-radius: 4px;
+            margin-top: 20px;
+            background-color:rgb(206, 225, 250);
+           
+        }
+        .loginForm_encry{
+            background-color:whitesmoke;
+            padding: 50px;
+            border-radius:5px;
+            width: 800px;
+            margin:auto;
+            margin-bottom: 50px;
+            margin-top: 20px;
+        }
+        .loginForm_title{
+            text-align: center;
+            font-size: 30px;
+            color:rgb(0, 0, 0);
+        }
+        .loginForm_encry input[type="text"]{
+            display: inline-block;
+            margin: 5px 0 22px 0;
+            padding: 5px 5px; 
+            width: 100%;
+            border-radius: 5px;
+        }
+        .loginForm_encry input[type=text]:focus{
+            background-color: #ddd;
+            outline: none;
+        }
+        .loginForm_encry input[type="date"]{
+            display: block;
+            margin: 5px 0 22px 0;
+        }
+
+        .loginForm_encry textarea{
+            resize: vertical;
+            font-size: 20px;
+            display: block;
+            margin: auto;
+            height: 150px;
+            width: 100%;
+            border-radius: 5px;
+            resize:none;
+        }
+        .loginForm_encry label{
+            font-size: 20px;
+            
+        }
+        .radio_button{
+            display: block;
+            margin: 15px 0 22px 0;
+            
+        }
+        .custom-select {
+            display: block;
+            margin: 10px;
+            font-family: Arial;
+
+        }
+        .custom-select select{
+            padding: 10px 20px;
+            background-color: thistle;
+        }
+        .loginForm_encry input[type="submit"]{
+            padding: 10px 50px;
+            
+        }
+        .login_encry_submit{
+            width: 100px;
+            margin: auto;
+        }

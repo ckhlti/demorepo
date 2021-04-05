@@ -1,0 +1,18 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientlib.all @ categories=['rssfeedclientlib']}"/>
+
+<div id="${properties.componentID}" class="RSSFeed ${properties.uniqueClassName}" style="width:60%; margin: 0 auto;" data-rssurl="${properties.rssurl}" data-rsslimit="${properties.rsslimit}" data-rsstitle="${properties.title}" data-rsspubdate="${properties.pubdate}" data-rssdescription="${properties.description}" data-rsslink="${properties.link}">
+
+    <div class="card-body">
+        <h3 data-sly-test ="${wcmmode.edit == true}"><i class="fa fa-edit" aria-hidden="true" style="color:#EF8021;"></i> RSS Feed Component Author</h3>
+            <h3 data-sly-test ="${wcmmode.edit == false}" class="domain"><i class="fa fa-rss" aria-hidden="true" style="color:#EF8021;"></i> RSS Feeds from </h3>
+    	<hr>
+    	<div class="overflow-auto rssContent" style="height:500px;" >
+         </div>
+
+    </div>
+</div>
+<br>
+
+
+

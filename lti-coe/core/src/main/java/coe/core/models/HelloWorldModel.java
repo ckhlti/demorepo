@@ -50,9 +50,6 @@ public class HelloWorldModel {
 
     private String message;
 
-    @ValueMapValue
-    private String text;
-
     @PostConstruct
     protected void init() {
         PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
@@ -60,7 +57,7 @@ public class HelloWorldModel {
                 .map(pm -> pm.getContainingPage(currentResource))
                 .map(Page::getPath).orElse("");
 
-        message = "Wecome to COE World!\n"
+        message = "Hello World!\n"
             + "Resource type is: " + resourceType + "\n"
             + "Current page is:  " + currentPagePath + "\n"
             + "This is instance: " + settings.getSlingId() + "\n";
@@ -68,10 +65,6 @@ public class HelloWorldModel {
 
     public String getMessage() {
         return message;
-    }
-
-    public String getText() {
-        return text;
     }
 
 }

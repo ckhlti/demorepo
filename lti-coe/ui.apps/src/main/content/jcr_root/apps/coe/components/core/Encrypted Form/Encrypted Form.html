@@ -1,0 +1,71 @@
+<br>
+<sly
+	data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+	data-sly-call="${clientlib.all @ categories=['demo']}" />
+
+<div class="container_login">
+
+    <h3 class="loginForm_title">Simple Form</h3>
+    <form class="loginForm_encry" name="loginForm" method="get" action="/bin/demo/encryform" onsubmit="return validateform()">
+
+        <label for="id">Node id:</label>
+        <input type="text" id="id" name="id">
+
+        <label for="firstname">First name:</label>
+        <input type="text" id="firstname" name="firstname">
+
+        <label for="lastname">Last name:</label>
+        <input type="text" id="lastname" name="lastname">
+
+        <label class="dob" for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+        <div class="radio_button">
+            <label for="gender">Gender : </label><br/><br/>
+            <input type="radio" id="male" name="gender" value="male"> 
+
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+         </div>
+        <label for="mob">Mobile Number:</label>
+        <input type="text" id="mob" name="mob">
+
+        <label for="email">Email Id:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="pan">PAN Number:</label>
+        <input type="text" id="pan" name="pan">
+
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="text" id="aadhar" name="aadhar" >
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" cols="25" ></textarea>
+
+        <label for="city">City:</label> 
+        <div class="custom-select" style="width:200px;">
+            <select id="city" name="city">
+                <option value="not selected">Select City</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Delhi">Delhi</option>
+            </select>
+        </div>
+        <label for="state">State:</label> 
+        <div class="custom-select" style="width:400px;">
+            <select id="state" name="state">
+                <option value="not selected">Select State</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Rajsthan">Rajsthan</option>
+                <option value="Gujrat">Gujrat</option>
+                <option value="mMadhya Pradesh">Madhya Pradesh</option>
+            </select>
+        </div>
+        <div class="login_encry_submit">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+</div>
+<br>
