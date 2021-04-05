@@ -110,13 +110,6 @@
 
         <dependency>
             <groupId>coe</groupId>
-            <artifactId>coe.ui.frontend</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-
-        <dependency>
-            <groupId>coe</groupId>
             <artifactId>coe.ui.apps.structure</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
