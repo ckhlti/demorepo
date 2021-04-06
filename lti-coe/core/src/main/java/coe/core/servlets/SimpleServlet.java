@@ -41,7 +41,7 @@ import java.io.IOException;
         resourceTypes="coe/components/page",
         methods=HttpConstants.METHOD_GET,
         extensions="txt")
-@ServiceDescription("Simple Demo Servlet")
+@ServiceDescription("Simple Demo Servlet - updated by ravi"  )
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
     private static final long serialVersionUID = 1L;
