@@ -102,8 +102,7 @@ public class CTAButton {
 		}
         else
         {
-            LOG.info("Component id " + componentId);
-            LOG.info("resource - " + currentResource.getPath().toString());
+            LOG.info("Component id for CTA Button" + componentId);
             LOG.info("Component id not generated");
         }    
     }
