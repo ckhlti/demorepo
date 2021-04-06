@@ -7,7 +7,7 @@ import javax.xml.xpath.*;
 import org.w3c.dom.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import java.io.*;
 
 public class RSSHelper {
 	private static final Logger LOG = LoggerFactory.getLogger(RSSHelper.class);
@@ -36,7 +36,7 @@ public class RSSHelper {
 //				System.out.println();
 				listItems.add(item);
 			}
-		} catch (UnsupportedEncodingException|UnsupportedDataTypeException|RuntimeException e) {
+		} catch (Exception e) {
 			listItems = null;
 			LOG.debug("error in parsing RSS - " + e.getMessage());
 		}
