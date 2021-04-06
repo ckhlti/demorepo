@@ -36,7 +36,7 @@ public class RSSHelper {
 //				System.out.println();
 				listItems.add(item);
 			}
-		} catch (Exception e) {
+		} catch (UnsupportedEncodingException|UnsupportedDataTypeException|RuntimeException e) {
 			listItems = null;
 			LOG.debug("error in parsing RSS - " + e.getMessage());
 		}
