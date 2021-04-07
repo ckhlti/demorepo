@@ -3,4 +3,4 @@
     jcr:description="rss component for urls feeds"
     jcr:primaryType="cq:Component"
     jcr:title="read rss component"
-    componentGroup="LTIAEMCOE"/>
+    componentGroup="coe.core"/>

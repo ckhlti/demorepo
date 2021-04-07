@@ -1,0 +1,113 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2016 Adobe Systems Incorporated
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly data-sly-use.clc="coe.core.models.CLCModel"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.all @ categories=['coe.Custom-Layout-Container.v1']}"/>
+
+<sly data-sly-test.desktopClass=""/>
+<sly data-sly-test.mobileClass=""/>
+
+
+<sly data-sly-test="${clc.backgroundType == 'image'}">
+ <sly data-sly-test="${clc.desktopFileReference}">
+     <style>
+         .${clc.componentId @context='styleString'}-desktop-background-image {
+                 background : url('${clc.desktopFileReference @ context='uri'}');
+                 background-repeat:no-repeat;
+                 background-size:cover;
+         }
+     </style>
+     <sly data-sly-test.desktopClass="${clc.componentId @context='styleString'}-desktop-background-image"/>
+     <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-desktop-background-image"/>
+ </sly>
+
+ <sly data-sly-test="${clc.mobileSetting == 'different-image'}">
+     <sly data-sly-test="${clc.mobileFileReference}">
+         <style>
+             .${clc.componentId @context='styleString'}-mobile-background-image {
+                     background : url('${clc.mobileFileReference @ context='uri'}');
+                     background-repeat:no-repeat;
+                     background-size:cover;
+             }
+             <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-image"/>
+         </style>
+     </sly>
+ </sly>
+</sly>
+
+<sly data-sly-test="${clc.backgroundType == 'color'}">
+ <style>
+     .${clc.componentId @context='styleString'}-desktop-background-color {
+         background-color: ${clc.desktopBackgroundColor @ context='html'};
+         color: ${clc.desktopFontColor @context = 'html'};
+     }
+ </style>
+ <sly data-sly-test.desktopClass="${clc.componentId @context='styleString'}-desktop-background-color"/>
+ <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-desktop-background-color"/>
+ <sly data-sly-test="${clc.mobileBackgroundColorSetting == 'different-color'}">
+     <style>
+         .${clc.componentId @context='styleString'}-mobile-background-color {
+             background-color: ${clc.mobileBackgroundColor @ context='html'};
+             color: ${clc.mobileFontColor @context = 'html'};
+         }
+     </style>
+     <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-color"/>
+ </sly>
+</sly>
+
+
+
+start
+				<div data-sly-list.gColor="${clc.gradientColors}">
+
+test
+					, ${gColor.gradientColor}
+				</div>
+<sly data-sly-test="${clc.backgroundType == 'gradient'}">
+    <style>
+
+        .${clc.componentId @context='styleString'}-desktop-background-gradient {
+            background-image: linear-gradient(
+                ${clc.gradientType == 'linear' ? clc.linearGradientType : clc.radialGradientType  @context='html' }
+                ${clc.gradientType == 'radial' ? deg : '' }, ${clc.gradientColors @context='html'}
+
+
+
+			);
+
+			color : ${clc.desktopGradientFontColor @context='html'}
+        }
+    </style>
+</sly>
+ <div id="${clc.componentId}" data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid" class="${api.cssClass} ${allowed.cssClass} ${clc.uniqueClassName}" >
+     <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+          data-sly-test="${isAllowedApplicable}"
+          data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+          data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, resourcesMap=allowed.resourcesMap,
+             placeholderCss=allowed.placeholderCssClass,
+             placeholderType=allowed.placeholderResourceType}"></sly>
+     <sly data-sly-test="${!isAllowedApplicable}"
+          data-sly-repeat.child="${api.paragraphs}"
+          data-sly-resource="${child.path @ resourceType=child.resourceType, decoration='true', cssClassName=child.cssClass}"></sly>
+     <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
+          data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"/>
+ </div>
+
+ <div class="custom-layout-container-parameters">
+     <input type="hidden" class="componentclass"  id="componentclass-${clc.componentId}"  value="${clc.componentId}">
+     <input type="hidden" class="desktopclass" id="desktopclass-${clc.componentId}"  value="${desktopClass}">
+     <input type="hidden" class="mobileClass" id="mobileClass-${clc.componentId}"  value="${mobileClass}">
+ </div>
