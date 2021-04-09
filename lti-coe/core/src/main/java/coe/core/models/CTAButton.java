@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 import coe.core.utils.GlobalUtil;
 
-@Model(adaptables = SlingHttpServletRequest.class)
+@Model(adaptables = SlingHttpServletRequest.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 public class CTAButton {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CTAButton.class);
@@ -46,29 +46,29 @@ public class CTAButton {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    @ValueMapValue
+    @ValueMapValue 
     private String componentId;
     
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String uniqueClassName;
     
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String ariaLabel;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String function;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String appearance;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String alignment;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String buttonText;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String modalID;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String targetUrl;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String target;
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String iconClass;
 
     @PostConstruct
@@ -102,7 +102,8 @@ public class CTAButton {
 		}
         else
         {
-            LOG.info("Component id for CTA Button" + componentId);
+            LOG.info("Component id " + componentId);
+            LOG.info("resource - " + currentResource.getPath().toString());
             LOG.info("Component id not generated");
         }    
     }

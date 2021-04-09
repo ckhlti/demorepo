@@ -21,3 +21,24 @@
 .coe-cta-button span.right-arrow{
 	background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
     }
+
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: orange;border-radius:20px
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+}

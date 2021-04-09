@@ -1,5 +1,5 @@
 <div id="${properties.componentId}" class="coe-cta-button ${properties.uniqueClassName} ${properties.alignment} ${properties.appearance}">
-	<div data-sly-test.onclick = "return(modalTrigger('${properties.modalID}'))" data-sly-unwrap></div>
+	<div data-sly-test.onclick = "return(modalTrigger(${properties.modalID}))" data-sly-unwrap></div>
 	<a href="${properties.targetUrl}" target="${properties.target}" onclick="${properties.function == 'trigger' ? onclick : '' @ context ='html'}">
 		${properties.buttonText}
 		<sly data-sly-test="${properties.appearance == 'icon'}">
@@ -12,10 +12,3 @@
 		<sly data-sly-test="${properties.ariaLabel}"><span class="sr-only">${properties.ariaLabel}</span></sly>
 	</a>
 </div>
-<script>
-	function modalTrigger(compId)
-	{
-		alert(compId);
-		return false;
-	}
-</script>

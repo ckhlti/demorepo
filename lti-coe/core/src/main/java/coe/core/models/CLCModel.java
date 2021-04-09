@@ -29,8 +29,9 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import coe.core.utils.GlobalUtil;
+import java.util.List;
 
-@Model(adaptables = SlingHttpServletRequest.class)
+@Model(adaptables = Resource.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 public class CLCModel {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CLCModel.class);
@@ -46,15 +47,58 @@ public class CLCModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String componentId;
     
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String uniqueClassName;
     
+    @ValueMapValue @Optional
+    private String backgroundType;
+    @ValueMapValue @Optional
+    private String desktopFileReference;
+    @ValueMapValue @Optional
+    private String mobileSetting;
+    @ValueMapValue @Optional
+    private String mobileFileReference;
+
+    @ValueMapValue @Optional
+    private String desktopBackgroundColor;
+    @ValueMapValue @Optional
+    private String desktopFontColor;
+    @ValueMapValue @Optional
+    private String mobileBackgroundColorSetting;
+    @ValueMapValue @Optional
+    private String mobileBackgroundColor;
+    @ValueMapValue @Optional
+    private String mobileFontColor;
+
+    @ValueMapValue @Optional
+    private String  gradientType;
+    @ValueMapValue @Optional
+    private String linearGradientType;
+    @ValueMapValue @Optional
+    private String radialDegree;
+    @Inject @Optional
+    private List<CLCGradientColorModel> gradientColors;
+    @ValueMapValue @Optional
+    private String desktopGradientFontColor;
+    @ValueMapValue @Optional
+    private String mobileBackgroundGradient;
+    @ValueMapValue @Optional
+    private String mobileGradientType;
+    @ValueMapValue @Optional
+    private String mobileLinearGradientType;
+    @ValueMapValue @Optional
+    private String mobileRadialDegree;
+    @Inject @Optional
+    private List<CLCGradientColorModel> mobileGradientColors;
+    @ValueMapValue @Optional
+    private String mobileGradientFontColor;
 
     @PostConstruct
     protected void init() {
+        LOG.debug("CLC model initiat");
         if (StringUtils.isEmpty(componentId) && currentResource != null) {
 
 			componentId = GlobalUtil.generateUniqueHashId("Custom Layout Container", currentResource.getPath()); 	//Generate unique component Id
@@ -103,5 +147,68 @@ public class CLCModel {
         return uniqueClassName;
     }
 
+    public String getBackgroundType() {
+        return backgroundType;
+    }
+    public String getDesktopFileReference() {
+        return desktopFileReference;
+    }
+    public String getMobileSetting() {
+        return mobileSetting;
+    }
+    public String getMobileFileReference() {
+        return mobileFileReference;
+    }
+    public String getDesktopBackgroundColor() {
+        return desktopBackgroundColor;
+    }
+    public String getDesktopFontColor() {
+        return desktopFontColor;
+    }
+    public String getMobileBackgroundColorSetting() {
+        return mobileBackgroundColorSetting;
+    }
+    public String getMobileBackgroundColor() {
+        return mobileBackgroundColor;
+    }
+    public String getMobileFontColor() {
+        return mobileFontColor;
+    }
+    public String getGradientType() {
+        return gradientType;
+    }
+    public String getLinearGradientType() {
+        return linearGradientType;
+    }
+    public String getRadialDegree() {
+        return radialDegree;
+    }
+    public List<CLCGradientColorModel> getGradientColors() {
+        LOG.debug("Gradient Colors for desktop : " + gradientColors.toString());
+        return gradientColors;
+    }
+    public String getDesktopGradientFontColor() {
+        return desktopGradientFontColor;
+    }
+    public String getMobileBackgroundGradient() {
+        return mobileBackgroundGradient;
+    }
+    public String getMobileGradientType() {
+        return mobileGradientType;
+    }
+    public String getMobileLinearGradientType() {
+        return mobileLinearGradientType;
+    }
+    public String getMobileRadialDegree() {
+        return mobileRadialDegree;
+    }
+    public List<CLCGradientColorModel> getMobileGradientColors() {
+                LOG.debug("Gradient Colors for mobile : " + mobileGradientColors.toString());
+
+        return mobileGradientColors;
+    }
+    public String getMobileGradientFontColor() {
+        return mobileGradientFontColor;
+    }
 
 }

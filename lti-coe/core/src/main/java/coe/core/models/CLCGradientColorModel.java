@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Map;
 import coe.core.utils.GlobalUtil;
 
-@Model(adaptables = SlingHttpServletRequest.class)
+@Model(adaptables = Resource.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
 public class CLCGradientColorModel {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CLCGradientColorModel.class);
@@ -46,20 +46,22 @@ public class CLCGradientColorModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String gradientColor;
     
-    @ValueMapValue
+    @ValueMapValue @Optional
     private String transparency;
     
     @PostConstruct
     protected void init() {
+        LOG.debug("CLC - Gradient Model initiated");
     }
 
 	/**
     *  return modalID
     */
     public String getGradientColor() {
+        LOG.debug("Gradient Color : " + gradientColor);
         return gradientColor;
     }
 
@@ -67,6 +69,7 @@ public class CLCGradientColorModel {
     *  return targetUrl
     */
     public String getTransparency() {
+        LOG.debug("Transparency : " + transparency);
         return transparency;
     }
 }
