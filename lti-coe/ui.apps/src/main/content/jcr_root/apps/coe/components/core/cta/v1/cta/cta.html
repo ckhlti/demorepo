@@ -1,14 +1,16 @@
-<div id="${properties.componentId}" class="coe-cta-button ${properties.uniqueClassName} ${properties.alignment} ${properties.appearance}">
-	<div data-sly-test.onclick = "return(modalTrigger(${properties.modalID}))" data-sly-unwrap></div>
-	<a href="${properties.targetUrl}" target="${properties.target}" onclick="${properties.function == 'trigger' ? onclick : '' @ context ='html'}">
-		${properties.buttonText}
-		<sly data-sly-test="${properties.appearance == 'icon'}">
-			<span class="${properties.iconClass}"></span>
+<sly data-sly-use.cta="coe.core.models.CTAButton"></sly>
+
+<div id="${cta.componentId}" class="coe-cta-button ${cta.uniqueClassName} ${cta.alignment} ${cta.appearance}">
+	<div data-sly-test.onclick = "return(modalTrigger('#${cta.modalID}'))" data-sly-unwrap></div>
+	<a href="${cta.targetUrl}" target="${cta.target}" onclick="${cta.function == 'trigger' ? onclick : '' @ context ='html'}">
+		${cta.buttonText}
+		<sly data-sly-test="${cta.appearance == 'icon'}">
+			<span class="${cta.iconClass}"></span>
 		</sly>
 
-		<sly data-sly-test="${properties.buttonIcon}">
-			<span class="${properties.buttonIcon}"></span>
+		<sly data-sly-test="${cta.buttonIcon}">
+			<span class="${cta.buttonIcon}"></span>
 		</sly>
-		<sly data-sly-test="${properties.ariaLabel}"><span class="sr-only">${properties.ariaLabel}</span></sly>
+		<sly data-sly-test="${cta.ariaLabel}"><span class="sr-only">${cta.ariaLabel}</span></sly>
 	</a>
 </div>

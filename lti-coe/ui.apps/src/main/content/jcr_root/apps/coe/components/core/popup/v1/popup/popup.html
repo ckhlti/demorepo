@@ -1,9 +1,9 @@
-<div id="${properties.componentId}" class="coe-popup-component ${properties.uniqueClassName} ">
-   <div id="popup1" class="${wcmmode.edit ? '' : 'popup-component'}">
+<div  class="coe-popup-component ${properties.uniqueClassName} ">
+   <div id="${properties.componentId}" class="${wcmmode.edit ? '' : 'popup-component'}">
       <div class="${wcmmode.edit ? '' : 'popup-wrapper'}"></div>
       <div class="${wcmmode.edit ? '' : 'popup-contents'}">
          <div data-sly-test="${!(wcmmode.edit || wcmmode.preview)}">
-            <div class="close-button" onclick="closePopup(popup1)"></div>
+            <div class="close-button" onclick="closePopup('#${properties.componentId @context='scriptString'}')"></div>
          </div>
          <div class="${wcmmode.edit ? '' : 'popup-scrollable'}">
             <div id="${clc.componentId}" data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid" class="${api.cssClass} ${allowed.cssClass} ${clc.uniqueClassName}" >
