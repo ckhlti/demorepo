@@ -17,13 +17,6 @@
   <sly data-sly-test.desktopClass=""/>
   <sly data-sly-test.mobileClass=""/>
 
-
-<div data-sly-list.gradients="${clc.gradientColors}">
-
-	${gradients.gradientColor}<br>
-
-</div>
-
   <sly data-sly-test="${clc.backgroundType == 'image'}">
    <sly data-sly-test="${clc.desktopFileReference}">
        <style>
@@ -70,14 +63,6 @@
        <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-color"/>
    </sly>
   </sly>
-
-
-
-GRadient Type = ${clc.gradientType}<br>
-
-Linear - ${clc.linearGradientType}<br>
-
-Radial - ${clc.radialDegree}<br>
   
   <sly data-sly-test="${clc.backgroundType == 'gradient'}">
       <style>

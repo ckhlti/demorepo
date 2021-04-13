@@ -37,9 +37,15 @@ public class CLCModel {
 	private static final Logger LOG = LoggerFactory.getLogger(CLCModel.class);
 
     @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
+    @Default(values="No resourceType")
+    protected String resourceType;
 
+    @OSGiService
+    private SlingSettingsService settings;
     @SlingObject
     private Resource currentResource;
+    @SlingObject
+    private ResourceResolver resourceResolver;
 
 
     @ValueMapValue @Optional
@@ -96,7 +102,7 @@ public class CLCModel {
         LOG.debug("CLC model initiat");
         if (StringUtils.isEmpty(componentId) && currentResource != null) {
 
-			componentId = GlobalUtil.generateUniqueHashId("Custom Layout Container", currentResource.getPath()); 	//Generate unique component Id
+			componentId = GlobalUtil.generateUniqueHashId("Custom-Layout-Container", currentResource.getPath()); 	//Generate unique component Id
 
 			LOG.debug("componentId generated :: path:: componentId {} , {}", currentResource.getPath(), componentId);
 

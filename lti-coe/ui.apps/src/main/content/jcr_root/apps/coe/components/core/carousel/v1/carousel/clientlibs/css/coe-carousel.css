@@ -1,0 +1,129 @@
+.Carousel-slide-container {border:solid 1px #000;}
+.carousel-indicators {margin-bottom: .2rem}
+.carousel-indicators li {cursor:pointer;}
+.carousel-control-next, .carousel-control-prev {width:50px;}
+.carousel-indicators.indexDots, .carousel-indicators.indexBar, .carousel-indicators.indexTitle {margin-bottom:1rem}
+.carousel-indicators.indexDots li {
+	position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-indent: -999px;
+    background-color: rgba(255,255,255,.5);   
+    border-radius:10px
+        }
+
+.carousel-indicators.indexBar li {
+	position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-indent: -999px;
+    background-color: rgba(255,255,255,.5);   
+    border-radius:10px
+        }        
+
+.carousel-indicators.indexTitle li {
+	position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 50px;
+    height: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: underline;
+        } 
+
+.carousel-indicators.indexIcon li {
+	position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 52px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: underline;
+        }
+
+
+.carousel-indicators.indexIcon img {
+	position: relative;
+    flex: 0 1 auto;
+    width: 50px;
+    height: 50px;
+        }
+.carousel-indicators li.active         {
+    background-color:#fff;
+    color:#fff;
+                    }
+.carousel-indicators.indexTitle li.active          {
+    background-color:unset;
+    color:#fff;
+                    }     
+.carousel-indicators.indexIcon li.active         {
+    background-color:unset;
+    color:#fff;
+                                        border:solid 1px #fff;
+                    }                               
+Line 1, Column 44
+ 
+Properties
+Access Control
+Replication
+Console
+Build Info
+Name
+Type
+String
+
+Value
+ 
+ 
+ 
+Multi	
+ 
+ 
+ 
+ 
+ 
+ 
+Add	
+ 
+ 
+ 
+ 
+ 
+ 
+Clear	
+ 
+ 
+ 
+ 
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 50px;
+    height: 50px;
+        }
+.carousel-indicators li.active         {
+    background-color:#fff;
+    color:#fff;
+                    }
+.carousel-indicators.indexTitle li.active          {
+    background-color:unset;
+    color:#fff;
+                    }     
+.carousel-indicators.indexIcon li.active         {
+    background-color:unset;
+    color:#fff;
+                                        border:solid 1px #fff;
+                    }                               
