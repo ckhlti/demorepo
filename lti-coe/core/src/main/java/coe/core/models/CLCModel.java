@@ -37,15 +37,10 @@ public class CLCModel {
 	private static final Logger LOG = LoggerFactory.getLogger(CLCModel.class);
 
     @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
-    @Default(values="No resourceType")
-    protected String resourceType;
 
-    @OSGiService
-    private SlingSettingsService settings;
     @SlingObject
     private Resource currentResource;
-    @SlingObject
-    private ResourceResolver resourceResolver;
+
 
     @ValueMapValue @Optional
     private String componentId;
@@ -79,7 +74,7 @@ public class CLCModel {
     private String linearGradientType;
     @ValueMapValue @Optional
     private String radialDegree;
-    @Inject @Optional
+    @Inject 
     private List<CLCGradientColorModel> gradientColors;
     @ValueMapValue @Optional
     private String desktopGradientFontColor;
@@ -91,7 +86,7 @@ public class CLCModel {
     private String mobileLinearGradientType;
     @ValueMapValue @Optional
     private String mobileRadialDegree;
-    @Inject @Optional
+    @Inject 
     private List<CLCGradientColorModel> mobileGradientColors;
     @ValueMapValue @Optional
     private String mobileGradientFontColor;

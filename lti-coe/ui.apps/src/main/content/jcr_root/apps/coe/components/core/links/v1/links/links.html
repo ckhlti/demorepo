@@ -1,0 +1,16 @@
+sample placeholder
+
+
+
+<div data-sly-use.linkModel="coe.core.models.Links"></sly>
+
+Title : ${linkModel.title}<br>
+
+Subtitle : ${linkModel.subtitle}</br>
+
+<div data-sly-list.news="${linkModel.news}">
+
+	${news.description}<br>
+
+</div>
+</div>

@@ -28,38 +28,31 @@ import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
-import coe.core.utils.GlobalUtil;
+
 
 @Model(adaptables = Resource.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
-public class CLCGradientColorModel {
+public class NewsItems {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CLCGradientColorModel.class);
-
+	private static final Logger LOG = LoggerFactory.getLogger(NewsItems.class);
 
     @ValueMapValue @Optional
-    private String gradientColor;
-    
-    @ValueMapValue @Optional
-    private String transparency;
-    
+    private String description;
+
+
+
     @PostConstruct
     protected void init() {
-        LOG.debug("CLC - Gradient Model initiated");
+ 
     }
 
 	/**
     *  return modalID
     */
-    public String getGradientColor() {
-        LOG.debug("Gradient Color : " + gradientColor);
-        return gradientColor;
+    public String getDescription() {
+        LOG.debug("Description - " + description);
+        return description;
     }
 
-    /**
-    *  return targetUrl
-    */
-    public String getTransparency() {
-        LOG.debug("Transparency : " + transparency);
-        return transparency;
-    }
+    
+
 }

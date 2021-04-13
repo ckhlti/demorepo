@@ -1,0 +1,81 @@
+<div data-sly-use.carousel="coe.core.models.CustomCarousel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     id="${carousel.componentId}"
+     class="carousel slide cmp-carousel ${carousel.carouselType}"
+     data-interval="false"
+     role="group"
+     aria-label="${carousel.accessibilityLabel}"
+     aria-roledescription="carousel"
+     data-cmp-is="carousel"
+     data-cmp-autoplay="${(wcmmode.edit || wcmmode.preview) ? '' : carousel.autoplay}"
+     data-cmp-delay="${carousel.delay}"
+     data-cmp-autopause-disabled="${carousel.autopauseDisabled}">
+
+ 	<div class="carousel-inner">
+        <ol>
+            <li data-sly-test="${carousel.items && carousel.items.size > 0}">
+			<sly data-sly-test="${wcmmode.preview || wcmmode.disabled}">
+                <div data-sly-repeat.item="${carousel.items}"
+                     data-sly-resource="${item.name @ decorationTagName='div'}"
+					 class="cmp-carousel__item${itemList.first ? ' cmp-carousel__item--active carousel-item active' : ' carousel-item'}"
+                     role="tabpanel"
+                     aria-label="${'Slide {0} of {1}' @ format=[itemList.count, carousel.items.size], i18n}"
+                     data-cmp-hook-carousel="item">
+                 </div>
+			</sly>
+			<sly data-sly-test="${wcmmode.edit}">
+                <div data-sly-repeat.item="${carousel.items}"
+                     data-sly-resource="${item.name @ decorationTagName='div'}"
+					 class="cmp-carousel__item${itemList.first ? ' cmp-carousel__item--active carousel-item' : ' carousel-item'}"
+                     role="tabpanel"
+                     aria-label="${'Slide {0} of {1}' @ format=[itemList.count, carousel.items.size], i18n}"
+                     data-cmp-hook-carousel="item">
+                 </div>
+			</sly>
+            </li>
+        </ol>
+	</div>
+    <div class="carousel-controls-bar">
+	    <a class="carousel-control-prev" href="#${carousel.componentId}" role="button" data-slide="prev"
+	                    aria-label="${'Previous' @ i18n}"
+	                    data-cmp-hook-carousel="previous">
+	        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	        <span class="sr-only">Previous</span>
+	  	</a>
+	    <a class="carousel-control-next" href="#${carousel.componentId}" role="button" data-slide="next" aria-label="${'Next' @ i18n}"
+	    data-cmp-hook-carousel="next">
+	        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	        <span class="sr-only">Next</span>
+	    </a>
+        <ol class="carousel-indicators carousel-slide-indicators" role="tablist"
+            aria-label="${'Choose a slide to display' @ i18n}"
+            data-cmp-hook-carousel="indicators">
+		<sly data-sly-test="${wcmmode.preview || wcmmode.disabled}">
+            <li data-sly-repeat.item="${carousel.items}"
+                        data-target="#${carousel.componentId}"
+                        data-slide-to="${'{0}' @ format=[itemList.index], i18n}"
+                        role="tab"
+                        class="${itemList.first ? ' cmp-carousel__indicator--active carousel-slide-indicator active' : ' carousel-slide-indicator'}"
+                        aria-label="${'Slide {0}' @ format=[itemList.index], i18n}"
+                        data-cmp-hook-carousel="indicator">
+					<span class="carousel-slide-indicator-index">${itemList.count}</span>
+					 <span class="carousel-slide-indicator-text">${item.title}</span>
+            </li>
+		</sly>
+		<sly data-sly-test="${wcmmode.edit}">
+            <li data-sly-repeat.item="${carousel.items}"
+                        data-target="#${carousel.componentId}"
+                        data-slide-to="${'{0}' @ format=[itemList.index], i18n}"
+                        role="tab"
+                        class="${itemList.first ? ' cmp-carousel__indicator--active carousel-slide-indicator' : ' carousel-slide-indicator'}"
+                        aria-label="${'Slide {0}' @ format=[itemList.index], i18n}"
+                        data-cmp-hook-carousel="indicator">
+					<span class="carousel-slide-indicator-index">${itemList.count}</span>
+					 <span class="carousel-slide-indicator-text">${item.title}</span>
+            </li>
+		</sly>
+  	</ol>
+    </div>
+ <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
+         data-sly-test="${(wcmmode.edit || wcmmode.preview) && carousel.items.size < 1}"></sly>
+</div>

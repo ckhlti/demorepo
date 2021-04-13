@@ -1,5 +1,5 @@
 /*
- *  SLing model for CTA Button 
+ *  SLing model for links 
  *
  */
 package coe.core.models;
@@ -29,37 +29,46 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import coe.core.utils.GlobalUtil;
+import java.util.List;
 
 @Model(adaptables = Resource.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
-public class CLCGradientColorModel {
+public class Links {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CLCGradientColorModel.class);
+	private static final Logger LOG = LoggerFactory.getLogger(Links.class);
+    @Inject
 
+    private List<NewsItems> news;
 
     @ValueMapValue @Optional
-    private String gradientColor;
-    
+    private String title;
+
     @ValueMapValue @Optional
-    private String transparency;
-    
+    private String subtitle;
+
+
     @PostConstruct
     protected void init() {
-        LOG.debug("CLC - Gradient Model initiated");
+
     }
 
 	/**
     *  return modalID
     */
-    public String getGradientColor() {
-        LOG.debug("Gradient Color : " + gradientColor);
-        return gradientColor;
+    public String getTitle() {
+        return title;
     }
 
     /**
     *  return targetUrl
     */
-    public String getTransparency() {
-        LOG.debug("Transparency : " + transparency);
-        return transparency;
+    public String getSubtitle() {
+        return subtitle;
     }
+
+    public List<NewsItems> getNews() {
+        LOG.debug("REtreiving News Descirptions");
+        return news;
+    }
+    
+
 }

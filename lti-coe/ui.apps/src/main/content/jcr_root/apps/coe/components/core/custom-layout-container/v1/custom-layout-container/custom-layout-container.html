@@ -18,6 +18,12 @@
   <sly data-sly-test.mobileClass=""/>
 
 
+<div data-sly-list.gradients="${clc.gradientColors}">
+
+	${gradients.gradientColor}<br>
+
+</div>
+
   <sly data-sly-test="${clc.backgroundType == 'image'}">
    <sly data-sly-test="${clc.desktopFileReference}">
        <style>
@@ -64,22 +70,48 @@
        <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-color"/>
    </sly>
   </sly>
+
+
+
+GRadient Type = ${clc.gradientType}<br>
+
+Linear - ${clc.linearGradientType}<br>
+
+Radial - ${clc.radialDegree}<br>
   
   <sly data-sly-test="${clc.backgroundType == 'gradient'}">
       <style>
-  
+		<sly>
           .${clc.componentId @context='styleString'}-desktop-background-gradient {
               background-image: linear-gradient(
-                  ${clc.gradientType == 'linear' ? clc.linearGradientType : clc.radialGradientType  @context='html' }
-                  ${clc.gradientType == 'radial' ? deg : '' }, ${clc.gradientColors @context='html'}
-  
-  
+                  ${clc.gradientType == 'radial' ? clc.radialDegree : '' }${clc.gradientType == 'linear' ? clc.linearGradientType : 'deg'  @context='html' }
+				  <sly data-sly-list.gradients = "${clc.gradientColors}">
+						,${gradients.gradientColor @context='html'} ${gradients.transparency @context='html'}%
+					</sly>
   
               );
   
               color : ${clc.desktopGradientFontColor @context='html'}
           }
       </style>
+   <sly data-sly-test.desktopClass="${clc.componentId @context='styleString'}-desktop-background-gradient"/>
+   <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-desktop-background-gradient"/>
+
+	<sly data-sly-test="${clc.mobileBackgroundGradient == 'different-gradient'}">
+       <style>
+          .${clc.componentId @context='styleString'}-mobile-background-gradient {
+              background-image: linear-gradient(
+                  ${clc.mobileGradientType == 'radial' ? clc.mobileRadialDegree : '' }${clc.mobileGradientType == 'linear' ? clc.mobileLinearGradientType : 'deg'  @context='html' }
+				  <sly data-sly-list.gradients = "${clc.mobileGradientColors}">
+						,${gradients.gradientColor @context='html'} ${gradients.transparency @context='html'}%
+					</sly>
+  
+              );
+
+              color : ${clc.mobileGradientFontColor @context='html'}
+       </style>
+       <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-gradient"/>
+   </sly>
   </sly>
    <div id="${clc.componentId}" data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid" class="${api.cssClass} ${allowed.cssClass} ${clc.uniqueClassName}" >
        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
