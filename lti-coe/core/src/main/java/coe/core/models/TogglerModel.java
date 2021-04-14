@@ -1,7 +1,4 @@
-/*
- *  SLing model for CTA Button 
- *
- */
+
 package coe.core.models;
 
 import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_TYPE;
@@ -31,9 +28,9 @@ import java.util.Map;
 import coe.core.utils.GlobalUtil;
 
 @Model(adaptables = SlingHttpServletRequest.class,  defaultInjectionStrategy=DefaultInjectionStrategy.OPTIONAL)
-public class CTAButton {
+public class TogglerModel {
 
-	private static final Logger LOG = LoggerFactory.getLogger(CTAButton.class);
+	private static final Logger LOG = LoggerFactory.getLogger(TogglerModel.class);
 
     @ValueMapValue(name=PROPERTY_RESOURCE_TYPE, injectionStrategy=InjectionStrategy.OPTIONAL)
     @Default(values="No resourceType")
@@ -53,31 +50,13 @@ public class CTAButton {
     private String uniqueClassName;
     
     @ValueMapValue @Optional
-    private String ariaLabel;
-    @ValueMapValue @Optional
-    private String function;
-    @ValueMapValue @Optional
-    private String appearance;
-    @ValueMapValue @Optional
-    private String alignment;
-    @ValueMapValue @Optional
-    private String buttonText;
-    @ValueMapValue @Optional
-    private String modalID;
-    @ValueMapValue @Optional
-    private String targetUrl;
-    @ValueMapValue @Optional
-    private String target;
-    @ValueMapValue @Optional
-    private String iconClass;
-    
-    @ValueMapValue @Optional
-    private String buttonIcon;
+    private String title;
+
     @PostConstruct
     protected void init() {
         if (StringUtils.isEmpty(componentId) && currentResource != null) {
 
-			componentId = GlobalUtil.generateUniqueHashId("cta", currentResource.getPath()); 	//Generate unique component Id
+			componentId = GlobalUtil.generateUniqueHashId("Toggler", currentResource.getPath()); 	//Generate unique component Id
 
 			LOG.debug("componentId generated :: path:: componentId {} , {}", currentResource.getPath(), componentId);
 
@@ -98,7 +77,7 @@ public class CTAButton {
 				}
 			}else {
 				
-				LOG.error("Unique Id Can not be Written CTA Model ");
+				LOG.error("Unique Id Can not be Written Toggler Model ");
 				
 			}
 		}
@@ -109,35 +88,6 @@ public class CTAButton {
             LOG.info("Component id not generated");
         }    
     }
-
-	/**
-    *  return modalID
-    */
-    public String getModalID() {
-        return modalID;
-    }
-
-    /**
-    *  return targetUrl
-    */
-    public String getTargetUrl() {
-        return targetUrl;
-    }
-
-    /**
-    *  return target
-    */
-    public String getTarget() {
-        return target;
-    }
-
-    /**
-    *  return iconClass
-    */
-    public String getIconClass() {
-        return iconClass;
-    }
-
 
     /**
     *  return componentID
@@ -155,43 +105,10 @@ public class CTAButton {
     }
 
     /**
-    *  return ariaLabel
+    *  return title
     */
-    public String getAriaLabel() {
-        return ariaLabel;
+    public String getTitle() {
+        return title;
     }
 
-    /**
-    *  return function
-    */
-    public String getFunction() {
-        return function;
-    }
-
-    /**
-    *  return appearance
-    */
-    public String getAppearance() {
-        return appearance;
-    }
-
-    /**
-    *  return buttonText
-    */
-    public String getButtonText() {
-        return buttonText;
-    }
-
-    /**
-    *  return alignment
-    */
-    public String getAlignment() {
-        return alignment;
-    }
-    /**
-    *  return buttonIcon
-    */
-    public String getButtonIcon() {
-        return buttonIcon;
-    }
 }

@@ -24,21 +24,21 @@
 
 
 /* Works on Firefox */
-* {
+.cmp-container *{
   scrollbar-width: thin;
   scrollbar-color: blue orange;
 }
 
 /* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+.cmp-container *::-webkit-scrollbar {
   width: 12px;
 }
 
-*::-webkit-scrollbar-track {
+.cmp-container *::-webkit-scrollbar-track {
   background: orange;border-radius:20px
 }
 
-*::-webkit-scrollbar-thumb {
+.cmp-container *::-webkit-scrollbar-thumb {
   background-color: blue;
   border-radius: 20px;
 }
