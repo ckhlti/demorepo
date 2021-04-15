@@ -33,7 +33,7 @@ $(document).ready(function()
 
                 if(title === true){$div2.append($("<h3>").text(item.title))}
                 if(pubdate === true){$div2.append($("<small>").addClass("text-muted").text(item.pubDate))}
-                if(description === true){$div2.append($("<p>").text(item.description))}
+                if(description === true){$div2.append($("<div>").html(item.description))}
                 if(link === true){$div2.append($("<a>",{href: item.link,target:"_blank"}).text("Read more →"))}
 
                 $div.append($div2);

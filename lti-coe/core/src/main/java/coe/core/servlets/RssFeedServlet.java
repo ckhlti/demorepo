@@ -40,15 +40,15 @@ public class RssFeedServlet extends SlingSafeMethodsServlet {
 	@Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
 		
-//		LOG.debug("initiating rSS Feed servlet");
+		LOG.debug("initiating rSS Feed servlet");
 //		String rssurl = request.getParameter("rssurl");
 		String url = request.getParameter("rssurl");
-//		LOG.debug("RSS URL - " + url);
+		LOG.debug("RSS URL - " + url);
 //		PrintWriter out = response.getWriter();
 		//response.setHeader("Content-Type", "text/html");
 		List<RSSItem> alist = RSSHelper.read(url);
 		String json = new Gson().toJson(alist);
-//		LOG.debug("JSON - " + json);
+		LOG.debug("JSON - " + json);
 //		response.setStatus(200);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");

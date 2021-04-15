@@ -3,16 +3,21 @@
 <sly data-sly-test="${wcmmode.edit}">
 	<div class="xtoggler-contents">
 		<div class="xtoggler-title">${toggler.title}</div>
-		<div class="xtoggler-summary">
-			<div  data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+        <div style="border:solid 1px #000"><i>Author face contents</i>
+            <div class="xtoggler-summary">
+                <div  data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+            </div>
 		</div>
-		<div class="xtoggler-details">
-			<div data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+        <div style="border:solid 1px #000"><i>Author toggle contents</i>
+			<div class="xtoggler-details">
+                <div data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+            </div>
 		</div>
 	</div>
 </sly>
 <sly data-sly-test="${!(wcmmode.edit)}">
 <div id="${toggler.componentId}" class="coe-toggler ${toggler.uniqueClassName}">
+    <div class="toggler-close-button"></div>
 	<div class="toggler-contents">
 		<div class="toggler-title">${toggler.title}</div>
 		<div class="toggler-summary">
@@ -20,14 +25,6 @@
 		</div>
 		<div class="toggler-details">
 			<div  data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
-		</div>
-	</div>
-	<div class="toggler-cta">
-		<div class="toggler-cta-expand">
-			<div class="down-arrow"></div>
-		</div>
-		<div class="toggler-cta-collapse">
-			<div class="up-arrow"></div>
 		</div>
 	</div>
 </div>

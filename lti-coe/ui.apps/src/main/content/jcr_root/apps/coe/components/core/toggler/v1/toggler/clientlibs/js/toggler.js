@@ -1,26 +1,25 @@
 $(".coe-toggler").each(function() {
-    //console.log($(this).html());
     var id = $(this).attr("id");
-    console.log(id);
-    $("#"+id).find(".down-arrow").click(function() {toggleDetailsCard(id);});
-    $("#"+id).find(".up-arrow").click(function() {toggleSummaryCard(id);});
+    $("#"+id).find(".toggler-contents").click(function() {toggleDetailsCard(id);});
+    $("#"+id).find(".toggler-close-button").click(function() {toggleSummaryCard(id);});
 }
 )
 
 function toggleDetailsCard(cardId)
 {
-	var togglerId = $("#"+cardId);;
+    console.log("summart clicked");
+	var togglerId = $("#"+cardId);
+    togglerId.unbind("click");
     togglerId.find(".toggler-contents .toggler-details").show("slow");
     togglerId.find(".toggler-contents .toggler-summary").hide();
-    togglerId.find(".toggler-cta .down-arrow").hide();
-    togglerId.find(".toggler-cta .up-arrow").show();
+    togglerId.find(".toggler-close-button").show();
 }
 
 function toggleSummaryCard(cardId)
 {
+    console.log("Close clicked");
 	var togglerId = $("#"+cardId);
     $(togglerId).find(".toggler-contents .toggler-details").hide();
     $(togglerId).find(".toggler-contents .toggler-summary").show();
-    $(togglerId).find(".toggler-cta .down-arrow").show();
-    $(togglerId).find(".toggler-cta .up-arrow").hide();
+    togglerId.find(".toggler-close-button").hide();
 }
