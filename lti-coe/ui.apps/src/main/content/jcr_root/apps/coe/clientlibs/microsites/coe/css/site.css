@@ -1,9 +1,11 @@
+html,body {background:#fff;}
 /* ADA */
 .sr-only {
     display:none
 }
 /* Header */
 .header-logo-container {margin-top:10px;}
+header.experiencefragment  {border:none}
 header.experiencefragment .cmp-container {display:block}
 .header-util-nav .coe-cta-button.icon {margin-top:-15px; padding-right:10px;}
 #coe-header-nav ul {text-align:right;padding-right:50px;}
@@ -11,9 +13,32 @@ header.experiencefragment .cmp-container {display:block}
 header.experiencefragment a:hover {text-decoration:none}
 .header-nav-cta a:hover {color:#fff !important}
 
+/* footer - social icons*/
+footer.experiencefragment {border-top:solid 3px #ccc;}
+.footer-social-icons ul {float:right;padding-right:15px;margin-top:10px}
+.footer-social-icons li {float:left;list-style:none;padding-right:20px}
+.footer-social-icons .avia_hidden_link_text {font-size:0px;width:15px;height:15px;background;display:block;background-size:contain;background-repeat:no-repeat;padding-left:15px}
+ .av-social-link-linkedin span {background:url(/content/dam/coe/global-assets/linkedin-social.png);}
+ .av-social-link-twitter span {background:url(/content/dam/coe/global-assets/twitter-social.png);}
+ .av-social-link-youtube span {background:url(/content/dam/coe/global-assets/youtube-social.png);}
+ .av-social-link-facebook span {background:url(/content/dam/coe/global-assets/fb-social.png);}
+ .av-social-link-instagram span {background:url(/content/dam/coe/global-assets/insta-icon.png);}
+ .av-social-link-mail span {background:url(/content/dam/coe/global-assets/email-social.png);}
+.footer-copyright-box {padding:15px 10px 0;margin-top:10px}
+#footer-links {float:right;}
+#footer-links li {list-style: none;
+    padding-left: 15px;
+    float: left;
+    border-right: solid 1px #000;
+    padding: 0 10px;
+	line-height: 22px;
+}
+#footer-links li:last-child {border:none;}
+
+#footer-links li a, #footer-links li a:hover, #footer-links li a:visited {color:#000;text-decoration:none;}
 /* COE CTA */
 /* for cta button type */
-.coe-cta-button.button a{
+.coe-cta-button.button a{ 
     background:#00008c;
     color: #fff;
 }
@@ -24,13 +49,15 @@ header.experiencefragment a:hover {text-decoration:none}
     color:transparent;
 }
 .coe-cta-button.icon .right-arrow {
-    background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+    background-image: url(/content/dam/coe/global-assets/right-arrow.png);
 }
 
 .coe-cta-button span.right-arrow{
-	background-image: url(https://freesvg.org/img/kuba_arrow_button_set_2.png);
+	background-image: url(/content/dam/coe/global-assets/right-arrow.png);
     }
-
+    .coe-cta-button.icon .search-icon {
+      background-image: url(/content/dam/coe/global-assets/search.png);
+  }
 
 /* Works on Firefox */
 .cmp-container *{
