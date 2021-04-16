@@ -5,11 +5,11 @@
 	<a href="${cta.targetUrl}" target="${cta.target}" onclick="${cta.function == 'trigger' ? onclick : '' @ context ='html'}">
 		${cta.buttonText}
 		<sly data-sly-test="${cta.appearance == 'icon'}">
-			<span class="${cta.iconClass}"></span>
+			<span class="${cta.iconClass} icon-as-button"></span>
 		</sly>
 
 		<sly data-sly-test="${cta.buttonIcon}">
-			<span class="${cta.buttonIcon}"></span>
+			<span class="${cta.buttonIcon} icon-as-button"></span>
 		</sly>
 		<sly data-sly-test="${cta.ariaLabel}"><span class="sr-only">${cta.ariaLabel}</span></sly>
 	</a>
