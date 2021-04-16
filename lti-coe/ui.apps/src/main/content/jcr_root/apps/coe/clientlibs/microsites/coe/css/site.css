@@ -3,12 +3,13 @@ html,body {background:#fff;}
 .sr-only {
     display:none
 }
+.container {max-width:100%}
 /* Header */
-.header-logo-container {margin-top:10px;}
+.header-logo-container {margin-top:20px;}
 header.experiencefragment  {border:none}
 header.experiencefragment .cmp-container {display:block}
-.header-util-nav .coe-cta-button.icon {margin-top:-15px; padding-right:10px;}
-#coe-header-nav ul {text-align:right;padding-right:50px;}
+.header-util-nav .coe-cta-button.icon {margin-top:-15px; padding-right:10px;padding-bottom:10px}
+#coe-header-nav ul {text-align:right;}
 #coe-header-nav li {display:inline-flex;white-space:nowrap;padding:15px 20px}
 header.experiencefragment a:hover {text-decoration:none}
 .header-nav-cta a:hover {color:#fff !important}
@@ -78,3 +79,5 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
   background-color: blue;
   border-radius: 20px;
 }
+
+.carousel-slide-container img {width:100%;height:auto;}
