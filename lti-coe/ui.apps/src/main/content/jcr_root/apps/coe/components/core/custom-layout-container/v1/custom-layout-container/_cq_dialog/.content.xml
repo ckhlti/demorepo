@@ -38,6 +38,31 @@
                                         fieldDescription="Enter CSS Classname to be added to the component wrapper"
                                         fieldLabel="Unique Class Name"
                                         name="./uniqueClassName"/>
+                                    <targeturl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Target URL to link to"
+                                        fieldLabel="Target URL"
+                                        name="./targetUrl"
+                                        required="{Boolean}false"/>
+                                    <target
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Select Target Window Type"
+                                        fieldLabel="Target"
+                                        name="./target"
+                                        required="{Boolean}false">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <samewindow
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Same window"
+                                                value="_self"/>
+                                            <newwindow
+                                                jcr:primaryType="nt:unstructured"
+                                                text="New window"
+                                                value="_blank"/>
+                                        </items>
+                                    </target>
                                     <background-type
                                         granite:class="cq-dialog-dropdown-showhide"
                                         jcr:primaryType="nt:unstructured"

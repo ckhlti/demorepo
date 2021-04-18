@@ -49,7 +49,7 @@
         <sly data-sly-list="${carousel.slides}">
             <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
 	      	<div class="carousel-item ${itemList.index==0? 'active' : ''}">
-            	<div class="Carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+            	<div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
 			</div>
         </sly>
 

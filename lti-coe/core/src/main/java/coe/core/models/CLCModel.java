@@ -53,7 +53,10 @@ public class CLCModel {
     
     @ValueMapValue @Optional
     private String uniqueClassName;
-    
+    @ValueMapValue @Optional
+    private String target;    
+    @ValueMapValue @Optional
+    private String targetUrl;
     @ValueMapValue @Optional
     private String backgroundType;
     @ValueMapValue @Optional
@@ -147,7 +150,12 @@ public class CLCModel {
     public String getUniqueClassName() {
         return uniqueClassName;
     }
-
+    public String getTarget() {
+        return target;
+    }
+    public String getTargetUrl() {
+        return targetUrl;
+    }
     public String getBackgroundType() {
         return backgroundType;
     }
