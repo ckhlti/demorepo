@@ -1,40 +1,26 @@
 
 <sly data-sly-use.accordionCard="coe.core.models.AccordionCardModel"/>
-<sly data-sly-test="${wcmmode.edit}">
-	<div class="xaccordionCard-contents">
-		<div class="xaccordionCard-title">${accordionCard.title}</div>
 
-        <div style="border:solid 1px #000"><i>Author summary contents</i>
-            <div class="xaccordionCard-summary">
-                <div  data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
-            </div>
-		</div>
-		<div style="border:solid 1px #000"><i>Author detail contents</i>
-            <div class="xaccordionCard-details">
-                <div data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
-            </div>
-		</div>
-	</div>
-</sly>
-<sly data-sly-test="${!(wcmmode.edit)}">
-<div id="${accordionCard.componentId}" class="coe-accordionCard ${accordionCard.uniqueClassName}">
+<div id="${accordionCard.componentId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-accordionCard'} ${accordionCard.uniqueClassName}">
 	<div class="accordionCard-contents">
 		<div class="accordionCard-title">${accordionCard.title}</div>
-		<div class="accordionCard-summary">
+		<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'accordionCard-summary'}">
 			<div data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
 		</div>
-		<div class="accordionCard-details">
+		<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'accordionCard-details'}">
 			<div  data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
 		</div>
 	</div>
-	<div class="accordionCard-cta">
-		<div class="accordionCard-cta-expand">
-			<div class="down-arrow"></div>
-		</div>
-		<div class="accordionCard-cta-collapse">
-			<div class="up-arrow"></div>
-		</div>
-	</div>
+
+    <sly data-sly-test="${!(wcmmode.edit || wcmmode.design)}">
+        <div class="accordionCard-cta">
+            <div class="accordionCard-cta-expand">
+                <div class="down-arrow"></div>
+            </div>
+            <div class="accordionCard-cta-collapse">
+                <div class="up-arrow"></div>
+            </div>
+        </div>
+	</sly>
 </div>
 
-</sly>
