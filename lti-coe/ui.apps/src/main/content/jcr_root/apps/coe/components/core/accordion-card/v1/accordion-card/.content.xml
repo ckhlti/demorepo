@@ -5,4 +5,4 @@
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="cq:Component"
     jcr:title="Accordion Card V1"
-    componentGroup="coe - Content"/>
+    componentGroup="coe - Core"/>
