@@ -1,0 +1,2 @@
+#base=css
+clickable_image.css
