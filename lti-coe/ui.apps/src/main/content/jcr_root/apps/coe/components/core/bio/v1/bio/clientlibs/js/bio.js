@@ -15,7 +15,7 @@ $(document).ready(function() {
 function loadBios(startFrom, bioDetails, cardsPerRow, totalRows, componentId) {
         for (var I=0;I < totalRows * cardsPerRow;I++) {
             if ( bioOffsetCounters[componentId]  >= bioDetails.length) {$("#"+componentId).find(".coe__bio_loadmore").hide();return;}
-            generateBioTags(bioDetails[bioOffsetCounters[componentId]], $("#"+componentId).find(".coe__bio_card_wrapper"), $(this).attr("data-contact-button"));
+            generateBioTags(bioDetails[bioOffsetCounters[componentId]], $("#"+componentId).find(".coe__bio_card_wrapper"), $("#"+componentId).attr("data-contact-button"));
             bioOffsetCounters[componentId] += 1;
         }
 }
