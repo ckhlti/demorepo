@@ -56,7 +56,7 @@ function coe__bio_popup_details(details_type,bioLink, details,id){
 	//console.log(bioCardDetail);
     if (details_type == 'content')
     {
-        $("#coe__bio_details_popup").find(".coe__bio_popup_detail_content").html(details)
+        $("#coe__bio_details_popup").find("#coe__bio_popup_detail_content").html(details)
 		bio_openPopup("#coe__bio_details_popup");
     }
     if (details_type == 'fragment')
