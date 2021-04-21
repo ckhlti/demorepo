@@ -25,8 +25,8 @@ exp_fragment : path to select an exp. Fragment
 
 
 On HTML, replace the parts with dialog value.
-For section under "Experience Fragment....", loop through the bio cards and if details_type is selected as fragment, then generate the HTML snippet for that bio cards
-coe__bio_details_popup_1 - replace 1 with count.
+For section under "Experience Fragment....", loop through the bio cards and if details_type is selected as fragment or content, then generate the HTML snippet for that bio cards
+coe__bio_details_popup_1 - replace 1 with count. If content, populate the div with id= coe__bio_popup_detail_content with details from dialog. If fragment, then include the experience fragment
 
 
 

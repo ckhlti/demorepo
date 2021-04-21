@@ -53,16 +53,10 @@ function generateBioTags(bioCardDetail, $parentDiv, contactText,componentId)
 }
 
 function coe__bio_popup_details(details_type,bioLink, details,id){
-	//console.log(bioCardDetail);
-    if (details_type == 'content')
-    {
-        $("#coe__bio_details_popup").find("#coe__bio_popup_detail_content").html(details)
-		bio_openPopup("#coe__bio_details_popup");
-    }
-    if (details_type == 'fragment')
+    if (details_type == 'content' || details_type == 'fragment')
 		bio_openPopup("#coe__bio_details_popup_" + id);
     if (details_type == 'link')
-		window.open(bioLink);
+		window.location.href=bioLink;
 }
 function loadNextSetBios(bioWrapperId)
 {
