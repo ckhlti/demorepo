@@ -1,0 +1,49 @@
+.clear {clear:both;}
+.coe__bio_image img {width:200px;height:200px;}
+.coe__bio_wrapper {width:100%;}
+.coe__bio_card {min-width:240px;;text-align:center;margin:auto;border: solid 1px #000;border-radius: 25px;position:relative;margin-right:10px;float:left}
+.coe__bio_image {background:#000;padding:5px;border-radius: 25px 25px 0 0}
+.coe__bio_content {padding:20px 10px;}
+.coe__bio_content .bio_name {font-weight:bold;font-size:1.4rem;line-height:24px;height:55px;}
+.coe__bio_content .bio_title {font-size: 1.2rem;padding-bottom:15px;height:55px}
+.coe__bio_content .bio_summary {font-style:italic; font-size: .8rem;height:45px}
+.coe__bio_content .bio_email {height:20px;}
+.coe__bio_content .bio_email a,.coe__bio_content .bio_email a:hover, .coe__bio_content .bio_email a:visited {text-decoration:none;}
+.coe__bio_content .bio_social {padding:10px 0;display: flex;
+    /* flex: auto; */
+    width: 120px;
+    margin: auto;
+    height:25px;
+}
+.coe__bio_content .bio_social .bio_social_fb {    
+    background: url("/content/dam/coe/global-assets/fb-social.png");
+}
+.coe__bio_content .bio_social .bio_social_ln {    
+    background: url("/content/dam/coe/global-assets/linkedin-social.png");
+}
+.coe__bio_content .bio_social .bio_social_twitter {    
+    background: url("/content/dam/coe/global-assets/twitter-social.png");
+}
+.coe__bio_content .bio_social .bio_social_icon {    
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: inherit;
+    margin: auto;
+}
+
+.coe__bio_contact {
+        background: #000;
+    border-radius: 0 0 25px 25px;
+    padding: 10px 0;
+}
+
+.coe__bio_contact a,.coe__bio_contact :hover, .coe__bio_contact a:visited{
+            color: #fff;text-decoration:none;
+        }
+
+.c2 .coe__bio_card  {width:49%;margin-bottom:10px;}
+.c3 .coe__bio_card  {width:32%;margin-bottom:10px;}
+.c4 .coe__bio_card  {width:24%;margin-bottom:10px;}
+.coe__bio_loadmore {text-align:center;}
+.coe__bio_loadmore button {padding:5px 20px; border-radius:10px;background:#5f5f5f;color:#fff;}
