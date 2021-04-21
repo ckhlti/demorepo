@@ -38,7 +38,7 @@
     padding: 10px 0;
 }
 
-.coe__bio_contact a,.coe__bio_contact :hover, .coe__bio_contact a:visited{
+.coe_bio_details_link, .coe_bio_details_link:hover{
             color: #fff;text-decoration:none;
         }
 
