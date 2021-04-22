@@ -98,8 +98,7 @@
        <sly data-sly-test.mobileClass="${clc.componentId @context='styleString'}-mobile-background-gradient"/>
    </sly>
   </sly>
-   <div id="${clc.componentId}" data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid" class="${api.cssClass} ${allowed.cssClass} ${clc.uniqueClassName}" >
-       <a href="${clc.targetUrl} target="${clc.target}" data-sly-test="${clc.targetUrl}">
+   <div id="${clc.componentId}" data-click-target="${clc.targetUrl}" data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid" class="${api.cssClass} ${allowed.cssClass} ${clc.uniqueClassName}" >
        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
             data-sly-test="${isAllowedApplicable}"
             data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
@@ -111,7 +110,6 @@
             data-sly-resource="${child.path @ resourceType=child.resourceType, decoration='true', cssClassName=child.cssClass}"></sly>
        <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
             data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"/>
-        </a data-sly-test="${clc.targetUrl}">
    </div>
   
    <div class="custom-layout-container-parameters">

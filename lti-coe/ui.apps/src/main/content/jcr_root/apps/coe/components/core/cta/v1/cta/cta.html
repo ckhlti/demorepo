@@ -2,7 +2,7 @@
 
 <div id="${cta.componentId}" class="coe-cta-button ${cta.uniqueClassName} ${cta.alignment} ${cta.appearance}">
 	<div data-sly-test.onclick = "return(modalTrigger('#${cta.modalID}'))" data-sly-unwrap></div>
-	<a href="${cta.targetUrl}" target="${cta.target}" onclick="${cta.function == 'trigger' ? onclick : '' @ context ='html'}">
+	<a x-cq-linkchecker="skip" href="${cta.targetUrl} @context='html'" target="${cta.target}" onclick="${cta.function == 'trigger' ? onclick : '' @ context ='html'}">
 		${cta.buttonText}
 		<sly data-sly-test="${cta.appearance == 'icon'}">
 			<span class="${cta.iconClass} icon-as-button"></span>
