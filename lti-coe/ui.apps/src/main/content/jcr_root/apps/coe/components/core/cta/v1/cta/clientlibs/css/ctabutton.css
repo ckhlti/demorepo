@@ -1,50 +1,24 @@
-/* COE CTA */
-/* for cta button type */
-.coe-cta-button a{
-    display:inline-flex;
-    line-height:28px;
-}
-.coe-cta-button.button a{
-    background:#00008c;
-    color: #fff;
-    padding:10px 15px;
-    border-radius: 10px;
-    text-decoration:none;
-}
-/* CTA button icon type */
-.coe-cta-button.icon a {
-    line-height:0px;
-    font-size:0px;
-    color:transparent;
-}
-.coe-cta-button.icon .right-arrow {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    background-size: contain;
-    font-size: 0px;
-    color:transparent;
-    background-repeat: no-repeat;
+
+.coe__intro_card_card-header{
+font-size:1.4rem; padding-bottom:15px;
 }
 
-.coe-cta-button .icon-as-button {
-    display: inline-flex;
-    height: 30px;
-    width: 30px;
-    background-size: contain;
-    font-size: 0px;
-    color:transparent;
-    background-repeat: no-repeat;
-    margin-left:10px;
+.coe__intro_card_card-btn-container {margin:20px 0 0;}
+.coe__intro_card_card-btn{
+     text-decoration: none;
+     text-align: center;
+     padding: 10px;
+     color: #F8F8F8;
+     background-color:#09138C;
+}
+ .coe__intro_card_card-btn:hover{
+     color: #F8F8F8;
 }
 
-/* cta alignment */
-.coe-cta-button.left {
-	text-align:left;
-        }
-.coe-cta-button.right {
-	text-align:right;
-        }
-.coe-cta-button.center {
-	text-align:center;
-        }        
+
+
+ .coe__intro_card_card-content{
+    width: 100%;
+    text-align: center;
+    padding:10px;
+}

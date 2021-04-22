@@ -1,16 +1,10 @@
 <div data-sly-use.intro="coe.core.models.IntroCardImpl">
-<section class="outer">
-    <div class="grid">
-        <div class="grid-item">
-            <div class="card">
-                <div class="card-content">
-                    <h4 class="card-header">${intro.title}</h4>
-                    <p class="card-text">${intro.des}</p>
-                    <a href="${intro.link}" class="card-btn" target="_blank">${intro.btntxt}</a>
+<div class="coe__intro_card_outer">
+                <div class="coe__intro_card_card-content">
+                    <div class="coe__intro_card_card-header">${intro.title}</div>
+                    <div class="coe__intro_card_card-summary">${intro.des @context='html'}</div>
+                    <div class="coe__intro_card_card-btn-container" ><a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="_blank">${intro.btntxt}</a></div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 </div> 
 
