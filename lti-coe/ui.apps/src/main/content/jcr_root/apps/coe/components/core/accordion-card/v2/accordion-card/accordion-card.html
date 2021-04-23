@@ -1,0 +1,25 @@
+
+<sly data-sly-use.accordionCardV2="coe.core.models.CustomAccordionCardModel"/>
+<div id="${accordionCardV2.cardId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-toggler'} ${accordionCardV2.uniqueClassName}">
+   <div class="toggler-contents">
+      <div class="toggler-title">${accordionCardV2.accordionCardTitle}</div>
+
+<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'toggler-summary'}">
+			<div data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+		</div>
+<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'toggler-details'}">
+			<div data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+		</div>
+   </div>
+
+ <sly data-sly-test="${!(wcmmode.edit || wcmmode.design)}">
+   <div class="toggler-cta">
+      <div class="toggler-cta-expand">
+         <div class="down-arrow"></div>
+      </div>
+      <div class="toggler-cta-collapse">
+         <div class="up-arrow"></div>
+      </div>
+   </div>
+</sly>
+</div>
