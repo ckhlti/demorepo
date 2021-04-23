@@ -8,9 +8,15 @@
      right:10px;
      cursor:pointer;
      display:none;
+    background: url(/content/dam/coe/global-assets/close-icon.png);
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+        background-repeat:no-repeat
+
 }
  .toggler-close-button:after {
-     content: "\274c";
+     xcontent: "\274c";
 }
 
 

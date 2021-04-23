@@ -1,5 +1,21 @@
 
 <sly data-sly-use.toggler="coe.core.models.TogglerModel"/>
+
+<style>
+<sly data-sly-test="${toggler.backgroundColor}">
+	.coe-toggler {background: ${toggler.backgroundColor @context='html'}}
+</sly>
+<sly data-sly-test="${toggler.fontColor}">
+	.coe-toggler {color: ${toggler.fontColor @context='html'}}
+</sly>
+<sly data-sly-test="${toggler.closeIconFileReference}">
+.toggler-close-button {
+    background-image: url(${toggler.closeIconFileReference @context='html'});
+}
+</sly>
+
+
+</style>
 <sly data-sly-test="${wcmmode.edit}">
 	<div class="xtoggler-contents">
 		<div class="xtoggler-title">${toggler.title}</div>

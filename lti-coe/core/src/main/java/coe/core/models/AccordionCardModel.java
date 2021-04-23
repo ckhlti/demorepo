@@ -51,6 +51,8 @@ public class AccordionCardModel {
     
     @ValueMapValue @Optional
     private String title;
+    @ValueMapValue @Optional
+    private String backgroundColor, fontColor,upArrowFileReference, downArrowFileReference ;
 
     @PostConstruct
     protected void init() {
@@ -109,6 +111,18 @@ public class AccordionCardModel {
     */
     public String getTitle() {
         return title;
+    }
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+    public String getFontColor() {
+        return fontColor;
+    }
+    public String getUpArrowFileReference() {
+        return upArrowFileReference;
+    }
+    public String getDownArrowFileReference() {
+        return downArrowFileReference;
     }
 
 }

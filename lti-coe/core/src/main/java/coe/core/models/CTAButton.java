@@ -70,7 +70,8 @@ public class CTAButton {
     private String target;
     @ValueMapValue @Optional
     private String iconClass;
-    
+    @ValueMapValue @Optional
+    private String backgroundColor, fontColor;    
     @ValueMapValue @Optional
     private String buttonIcon;
     @PostConstruct
@@ -194,4 +195,10 @@ public class CTAButton {
     public String getButtonIcon() {
         return buttonIcon;
     }
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+    public String getFontColor() {
+        return fontColor;
+    }    
 }

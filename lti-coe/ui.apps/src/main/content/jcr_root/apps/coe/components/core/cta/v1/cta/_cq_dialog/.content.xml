@@ -218,6 +218,40 @@
                                             jcr:primaryType="nt:unstructured"
                                             showhidetargetvalue="icon"/>
                                     </ctaicon>
+                                    <buttonColors
+                                        granite:class="hide appearance-show-hide"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <backgroundColor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                fieldLabel="Background Color"
+                                                name="./backgroundColor"
+                                                showDefaultColors="{Boolean}false"
+                                                showProperties="{Boolean}true"
+                                                showSwatches="{Boolean}true">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/datasources/allowedcolorswatches/v1"/>
+                                            </backgroundColor>
+                                            <foregroundcolor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                fieldLabel="Font Color"
+                                                name="./fontColor"
+                                                showDefaultColors="{Boolean}false"
+                                                showProperties="{Boolean}true"
+                                                showSwatches="{Boolean}true">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="core/wcm/components/commons/datasources/allowedcolorswatches/v1"/>
+                                            </foregroundcolor>
+                                        </items>
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue="button"/>
+                                    </buttonColors>
                                 </items>
                             </columns>
                         </items>

@@ -52,6 +52,9 @@ public class TogglerModel {
     @ValueMapValue @Optional
     private String title;
 
+    @ValueMapValue @Optional
+    private String backgroundColor, fontColor,closeIconFileReference;
+
     @PostConstruct
     protected void init() {
         if (StringUtils.isEmpty(componentId) && currentResource != null) {
@@ -110,5 +113,13 @@ public class TogglerModel {
     public String getTitle() {
         return title;
     }
-
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+    public String getFontColor() {
+        return fontColor;
+    }
+    public String getCloseIconFileReference() {
+        return closeIconFileReference;
+    }
 }
