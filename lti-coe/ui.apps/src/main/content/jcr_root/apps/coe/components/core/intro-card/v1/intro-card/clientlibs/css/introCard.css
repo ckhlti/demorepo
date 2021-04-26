@@ -1,13 +1,13 @@
 .coe__intro_card_card-header{
      font-size:1.4rem;
 }
+
+.coe__intro_card_card-summary {margin:20px 0}
  .coe__intro_card_card-btn{
      text-decoration: none;
      text-align: center;
-     display: block;
      padding: 10px;
      color: #F8F8F8;
-     display: grid;
      background-color:#09138C;
      margin: auto;
 }
