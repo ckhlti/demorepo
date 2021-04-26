@@ -1,10 +1,45 @@
 <div data-sly-use.intro="coe.core.models.IntroCardImpl">
-<div class="coe__intro_card_outer">
-                <div class="coe__intro_card_card-content">
-                    <div class="coe__intro_card_card-header">${intro.title}</div>
-                    <div class="coe__intro_card_card-summary">${intro.des @context='html'}</div>
-                    <div class="coe__intro_card_card-btn-container" ><a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="_blank">${intro.btntxt}</a></div>
-                </div>
-</div>
-</div> 
+    <style>
+        <sly data-sly-test="${intro.backgroundColor}">
+           #${intro.componentId @context='html'}.coe__intro_card_outer{background: ${intro.backgroundColor @context='html'} !important}
+        </sly>
 
+        <sly data-sly-test="${intro.foregroundColor}">
+             #${intro.componentId @context='html'} .coe__intro_card_card-header{color: ${intro.foregroundColor @context='html'} !important}
+        </sly>
+
+        <sly data-sly-test="${intro.foregroundColor}">
+             #${intro.componentId @context='html'} .coe__intro_card_card-summary{color: ${intro.foregroundColor @context='html'} !important}
+        </sly>
+
+        <sly data-sly-test="${intro.foregroundColor}">
+             #${intro.componentId @context='html'} .coe__intro_card_card-btn{color: ${intro.foregroundColor @context='html'} !important}
+        </sly>
+
+        <sly data-sly-test="${intro.buttonColor}">
+             #${intro.componentId @context='html'} .coe__intro_card_card-btn{background: ${intro.buttonColor @context='html'} !important}
+        </sly>
+
+        <sly data-sly-test="${intro.borderColor}">
+             #${intro.componentId @context='html'}.coe__intro_card_outer{border: ${intro.borderColor @context='html'} solid 1px !important}
+        </sly>
+
+        <sly data-sly-test="${intro.borderRad}">
+             #${intro.componentId @context='html'}.coe__intro_card_outer{border-radius: 25px !important}
+        </sly>
+
+		<sly data-sly-test="${intro.foregroundColorBtn}">
+             #${intro.componentId @context='html'} .coe__intro_card_card-btn{color: ${intro.foregroundColorBtn @context='html'} !important}
+        </sly>
+    </style>
+
+    <div id="${intro.componentId}" class="coe__intro_card_outer ${intro.uniqueClassName}">
+        <div class="coe__intro_card_card-content">
+            <div class="coe__intro_card_card-header">${intro.title}</div>
+            <div class="coe__intro_card_card-summary">${intro.des @context='html'}</div>
+            <div class="coe__intro_card_card-btn-container">
+                <a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="${intro.newPage == 'true' ? '_blank' : '_self'}">${intro.btntxt}</a>
+            </div>
+        </div>
+    </div>
+</div>

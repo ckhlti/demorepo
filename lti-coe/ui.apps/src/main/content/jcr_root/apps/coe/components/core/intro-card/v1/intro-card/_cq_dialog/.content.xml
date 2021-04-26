@@ -25,34 +25,153 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <componentid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Component Id"
+                                fieldLabel="Component Id"
+                                name="./componentId"
+                                required="{Boolean}true"/>
+                            <uniqueclassname
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter CSS Classname to be added to the component wrapper"
+                                fieldLabel="Unique Class Name"
+                                name="./uniqueClassName"/>
                             <title
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="What will be the title of the card that will be displayed?"
                                 fieldLabel="Title of the Card"
                                 name="./title"
                                 required="{Boolean}true"/>
                             <description
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                 fieldDescription="What will be the content of the card that will be displayed under the title?"
                                 fieldLabel="Description of the Card"
                                 name="./des"
-                                required="{Boolean}true"/>
+                                required="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <table
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-">
+                                        <hiddenHeaderConfig
+                                            jcr:primaryType="nt:unstructured"
+                                            hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                            hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                    </table>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                            </popovers>
+                                        </inline>
+                                        <dialogFullScreen
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,table#createoredit,#paraformat,image#imageProps]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <paraformat
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="paraformat:getFormats:paraformat-pulldown"
+                                                    ref="paraformat"/>
+                                            </popovers>
+                                        </dialogFullScreen>
+                                        <tableEditOptions
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                    </cui>
+                                </uiSettings>
+                            </description>
                             <btntxt
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Text that will be displayed in the button."
                                 fieldLabel="Text of the button"
                                 name="./btntxt"
                                 required="{Boolean}true"/>
                             <link
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Target Link."
                                 fieldLabel="Link for the Button"
                                 name="./link"
                                 required="{Boolean}true"/>
+                            <buttonColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                fieldDescription="Color for the button."
+                                fieldLabel="Button Color"
+                                name="./buttonColor"/>
+                            <foregroundBtn
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                fieldDescription="Color for the foreground of the button."
+                                fieldLabel="Foreground Color for the button."
+                                name="./foregroundColorBtn"/>
+                            <newPage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./newPage"
+                                text="Open target link in a new window?"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <borderColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                fieldDescription="Color of the border of the card."
+                                fieldLabel="Border Color"
+                                name="./borderColor"/>
+                            <borderRad
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./borderRad"
+                                text="Apply Border-Radius?"
+                                uncheckedValue="false"
+                                value="true"/>
+                            <backgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                fieldDescription="Color for the background."
+                                fieldLabel="Background Color"
+                                name="./backgroundColor"/>
+                            <foregroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                fieldDescription="Color for the foreground."
+                                fieldLabel="Foreground Color"
+                                name="./foregroundColor"/>
                         </items>
                     </column>
                 </items>
