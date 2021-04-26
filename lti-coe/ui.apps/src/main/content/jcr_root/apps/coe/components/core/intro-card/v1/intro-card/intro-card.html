@@ -38,12 +38,7 @@
             <div class="coe__intro_card_card-header">${intro.title}</div>
             <div class="coe__intro_card_card-summary">${intro.des @context='html'}</div>
             <div class="coe__intro_card_card-btn-container">
-                <sly data-sly-test="${intro.newPage == 'true'}">
-                    <a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="_blank">${intro.btntxt}</a>
-                </sly>
-                <sly data-sly-test="${intro.newPage == 'false'}">
-                    <a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="_self">${intro.btntxt}</a>
-                </sly>
+                <a class="coe__intro_card_card-btn" x-cq-linkchecker="skip" href="${intro.link}" target="${intro.newPage == 'true' ? '_blank' : '_self'}">${intro.btntxt}</a>
             </div>
         </div>
     </div>
