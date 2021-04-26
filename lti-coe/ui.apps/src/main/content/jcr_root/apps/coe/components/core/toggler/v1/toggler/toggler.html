@@ -3,13 +3,13 @@
 
 <style>
 <sly data-sly-test="${toggler.backgroundColor}">
-	.coe-toggler {background: ${toggler.backgroundColor @context='html'}}
+	#${toggler.componentId @context='html'}.coe-toggler {background: ${toggler.backgroundColor @context='html'}}
 </sly>
 <sly data-sly-test="${toggler.fontColor}">
-	.coe-toggler {color: ${toggler.fontColor @context='html'}}
+	#${toggler.componentId @context='html'}.coe-toggler {color: ${toggler.fontColor @context='html'}}
 </sly>
 <sly data-sly-test="${toggler.closeIconFileReference}">
-.toggler-close-button {
+	#${toggler.componentId @context='html'} .toggler-close-button {
     background-image: url(${toggler.closeIconFileReference @context='html'});
 }
 </sly>

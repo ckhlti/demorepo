@@ -1,10 +1,10 @@
 <sly data-sly-use.cta="coe.core.models.CTAButton"></sly>
 <style>
 <sly data-sly-test="${cta.backgroundColor}">
-	.coe-cta-button.button a {background: ${cta.backgroundColor @context='html'} !important}
+	#${cta.componentId @context='html'}.coe-cta-button.button a {background: ${cta.backgroundColor @context='html'} !important}
 </sly>
 <sly data-sly-test="${cta.fontColor}">
-	.coe-cta-button.button a {color: ${cta.fontColor @context='html'} !important}
+	#${cta.componentId @context='html'}.coe-cta-button.button a {color: ${cta.fontColor @context='html'} !important}
 </sly>
 
 </style>

@@ -2,18 +2,18 @@
 <sly data-sly-use.accordionCard="coe.core.models.AccordionCardModel"/>
 <style>
 <sly data-sly-test="${accordionCard.backgroundColor}">
-	.coe-accordionCard {background: ${accordionCard.backgroundColor @context='html'}}
+	#${accordionCard.componentId @context="html"}.coe-accordionCard {background: ${accordionCard.backgroundColor @context='html'}}
 </sly>
 <sly data-sly-test="${accordionCard.fontColor}">
-	.coe-accordionCard {color: ${accordionCard.fontColor @context='html'}}
+	#${accordionCard.componentId @context="html"}.coe-accordionCard {color: ${accordionCard.fontColor @context='html'}}
 </sly>
 <sly data-sly-test="${accordionCard.downArrowFileReference}">
-.accordionCard-cta .down-arrow {
+	#${accordionCard.componentId @context="html"} .accordionCard-cta .down-arrow {
     background-image: url(${accordionCard.downArrowFileReference @context='html'});
 }
 </sly>
 <sly data-sly-test="${accordionCard.upArrowFileReference}">
-.accordionCard-cta .up-arrow {
+	#${accordionCard.componentId @context="html"} .accordionCard-cta .up-arrow {
     background-image: url(${accordionCard.upArrowFileReference @context='html'});
 }
 </sly>
