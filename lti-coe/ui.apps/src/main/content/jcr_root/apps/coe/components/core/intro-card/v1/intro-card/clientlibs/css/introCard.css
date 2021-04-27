@@ -2,6 +2,13 @@
      font-size:1.4rem;
 }
 
+.coe__intro_card_outer {
+    margin: 0 10px;
+    padding: 20px;
+    border-radius:10px;
+}
+
+.coe__intro_card_outer:hover {transform:scale(1.05);}
 .coe__intro_card_card-summary {margin:20px 0}
  .coe__intro_card_card-btn{
      text-decoration: none;
@@ -11,6 +18,15 @@
      background-color:#09138C;
      margin: auto;
 }
+
+.coe__intro_card_card-btn-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+    position:absolute;
+    bottom:10px;
+}
+
  .coe__intro_card_card-btn:hover{
      color: #F8F8F8;
 }
@@ -19,4 +35,8 @@
      width: 100%;
      text-align: center;
      padding:10px;
+	position: relative;
+    min-height: 224px;
 }
+
+

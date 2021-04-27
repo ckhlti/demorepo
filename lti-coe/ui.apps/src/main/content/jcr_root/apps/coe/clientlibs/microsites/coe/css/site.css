@@ -81,3 +81,9 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
 }
 
 .carousel-slide-container img {width:100%;height:auto;}
+
+/* adobe cloud container */
+.adobe-cloud-container .intro-card-heading {text-align:center;margin:20px;}
+.adobe-cloud-container .intro-card-heading h2 {font-size:2.6rem;color:#09138C;}
+
+.adobe-cloud-container {margin-bottom:25px;}
