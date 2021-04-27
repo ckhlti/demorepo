@@ -1,0 +1,25 @@
+<sly data-sly-use.horizontaldiv="coe.core.models.HorizontalDividerImpl"></sly>
+
+<style>
+
+<sly data-sly-test="${horizontaldiv.height}">
+ #${horizontaldiv.componentId @context='html'}.coe_horizontal_divider_class{height: ${horizontaldiv.height @context='html'} !important}
+</sly>
+
+<sly data-sly-test="${horizontaldiv.backgroundcolor}">
+ #${horizontaldiv.componentId @context='html'}.coe_horizontal_divider_class{background: ${horizontaldiv.backgroundcolor @context='html'} !important}
+</sly>
+
+<sly data-sly-test="${horizontaldiv.bordercolor}">
+ #${horizontaldiv.componentId @context='html'}.coe_horizontal_divider_class{border:solid 2px ${horizontaldiv.bordercolor @context='html'} !important}
+</sly>
+
+<sly data-sly-test="${horizontaldiv.borderstyle}">
+ #${horizontaldiv.componentId @context='html'}.coe_horizontal_divider_class{border-style: ${horizontaldiv.borderstyle @context='html'} !important}
+</sly>
+
+</style>
+
+<div id="${horizontaldiv.componentId}" class="coe_horizontal_divider_class ${horizontaldiv.classname}">
+
+</div>
