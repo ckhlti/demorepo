@@ -3,5 +3,4 @@
     jcr:description="Summary List"
     jcr:primaryType="cq:Component"
     jcr:title="Summary List"
-    sling:resourceSuperType="core/wcm/components/list/v2/list1"
     componentGroup="coe - Core"/>
