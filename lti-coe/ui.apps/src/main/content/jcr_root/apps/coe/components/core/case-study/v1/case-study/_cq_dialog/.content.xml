@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="CTA Button"
+    jcr:title="Case Study Dialog"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -41,10 +41,163 @@
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Title for the accordion"
+                                        fieldDescription="Title for the Case Study"
                                         fieldLabel="Title"
                                         name="./title"
                                         required="{Boolean}false"/>
+                                    <summary
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Content for the Case Study"
+                                        fieldLabel="Summary"
+                                        name="./summary"
+                                        required="{Boolean}false"
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <justify
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <lists
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <paraformat
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <links
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <table
+                                                jcr:primaryType="nt:unstructured"
+                                                features="-">
+                                                <hiddenHeaderConfig
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
+                                                    hiddenHeaderEditingCSS="cq-RichText-hiddenHeader--editing"/>
+                                            </table>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <justify
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                            ref="justify"/>
+                                                        <lists
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                            ref="lists"/>
+                                                        <paraformat
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="paraformat:getFormats:paraformat-pulldown"
+                                                            ref="paraformat"/>
+                                                    </popovers>
+                                                </inline>
+                                                <dialogFullScreen
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify,lists#unordered,lists#ordered,lists#outdent,lists#indent,links#modifylink,links#unlink,table#createoredit,#paraformat,image#imageProps]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <paraformat
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="paraformat:getFormats:paraformat-pulldown"
+                                                            ref="paraformat"/>
+                                                    </popovers>
+                                                </dialogFullScreen>
+                                                <tableEditOptions
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[table#insertcolumn-before,table#insertcolumn-after,table#removecolumn,-,table#insertrow-before,table#insertrow-after,table#removerow,-,table#mergecells-right,table#mergecells-down,table#mergecells,table#splitcell-horizontal,table#splitcell-vertical,-,table#selectrow,table#selectcolumn,-,table#ensureparagraph,-,table#modifytableandcell,table#removetable,-,undo#undo,undo#redo,-,table#exitTableEditing,-]"/>
+                                            </cui>
+                                        </uiSettings>
+                                    </summary>
+                                    <btntxt
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Text for the button"
+                                        fieldLabel="Button Text"
+                                        name="./btntxt"
+                                        required="{Boolean}false"/>
+                                    <link
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Target Link"
+                                        fieldLabel="Link for the button"
+                                        name="./link"
+                                        required="{Boolean}false"/>
+                                    <backgroundColorBtn
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldDescription="Background Color for the button"
+                                        fieldLabel="Backgound Color of the button"
+                                        name="./backgroundColorBtn"/>
+                                    <foregroundColorBtn
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldDescription="Foreground Color for the button"
+                                        fieldLabel="Foreground Color of the button"
+                                        name="./foregroundColorBtn"/>
+                                    <newPage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        name="./newPage"
+                                        text="Open target link in a new window?"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        autoStart="{Boolean}false"
+                                        autoUpload="{Boolean}false"
+                                        class="cq:droptarget"
+                                        fieldLabel="Banner Image"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image/jpeg,image/png,image/webp,image/gif]"
+                                        multiple="{Boolean}false"
+                                        name="./file"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                    <imagePos
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldDescription="Position of the image in the Case Study"
+                                        fieldLabel="Image Position"
+                                        name="./position">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <imageLeft
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image on the Left"
+                                                value="left"/>
+                                            <imageRight
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image on the Right"
+                                                value="right"/>
+                                            <imageCenter
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image on the Top"
+                                                value="center"/>
+                                            <imageBackground
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Image in the background"
+                                                value="back"/>
+                                        </items>
+                                    </imagePos>
+                                    <backgroundColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldDescription="Background Color for the Case Study"
+                                        fieldLabel="Backgound Color"
+                                        name="./backgroundColor"/>
+                                    <foregroundColor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldDescription="Foreground Color for the Case Study"
+                                        fieldLabel="Foreground Color"
+                                        name="./foregroundColor"/>
                                 </items>
                             </columns>
                         </items>

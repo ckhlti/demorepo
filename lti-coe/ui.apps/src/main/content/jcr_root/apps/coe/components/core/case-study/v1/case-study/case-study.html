@@ -1,26 +1,88 @@
+<div data-sly-use.case="coe.core.models.CaseStudyImpl">
+<style>
+		<sly data-sly-test="${case.backgroundColor}">
+           #${case.componentId @context='html'}.coe__case_study_wrapper{background: ${case.backgroundColor @context='html'} !important}
+        </sly>
 
-<sly data-sly-use.accordionCard="coe.core.models.AccordionCardModel"/>
+	 	<sly data-sly-test="${case.foregroundColor}">
+             #${case.componentId @context='html'} .case_study_title{color: ${case.foregroundColor @context='html'} !important}
+        </sly>
 
-<div id="${accordionCard.componentId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-accordionCard'} ${accordionCard.uniqueClassName}">
-	<div class="accordionCard-contents">
-		<div class="accordionCard-title">${accordionCard.title}</div>
-		<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'accordionCard-summary'}">
-			<div data-sly-resource="${'summary' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
-		</div>
-		<div class="${wcmmode.edit || wcmmode.design ? 'author-container' : 'accordionCard-details'}">
-			<div  data-sly-resource="${'detail' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
-		</div>
-	</div>
+	 	<sly data-sly-test="${case.foregroundColor}">
+            #${case.componentId @context='html'}  .case_study_summary{color: ${case.foregroundColor @context='html'} !important}
+        </sly>
 
-    <sly data-sly-test="${!(wcmmode.edit || wcmmode.design)}">
-        <div class="accordionCard-cta">
-            <div class="accordionCard-cta-expand">
-                <div class="down-arrow"></div>
+		<sly data-sly-test="${case.backgroundColorBtn}">
+           #${case.componentId @context='html'}  .case_study_cta a{background: ${case.backgroundColorBtn @context='html'} !important}
+        </sly>
+
+		<sly data-sly-test="${case.foregroundColorBtn}">
+            #${case.componentId @context='html'} .case_study_cta a{color: ${case.foregroundColorBtn @context='html'} !important}
+        </sly>
+</style>
+
+
+    <sly data-sly-test="${case.position == 'left' }">
+        <div id="${case.componentId}" class="coe__case_study_wrapper case_study_image_left ${case.uniqueClassName}">
+            <div class="coe__case_study_image">
+                <img src="${case.fileReference @context='html'}" />
             </div>
-            <div class="accordionCard-cta-collapse">
-                <div class="up-arrow"></div>
+
+            <div class="coe__case_study_content">
+                <div class="case_study_title">${case.title}</div>
+
+                <div class="case_study_summary">${case.summary @context='html'}</div>
+
+                <div class="case_study_cta"><a href="${case.link}" class="case_study_cta" target="${case.newPage == 'true' ? '_blank' : '_self'}">${case.btntxt}</a></div>
             </div>
         </div>
-	</sly>
-</div>
+    </sly>
 
+    <sly data-sly-test="${case.position == 'right' }">
+        <div id="${case.componentId}" class="coe__case_study_wrapper case_study_image_right ${case.uniqueClassName}">
+            <div class="coe__case_study_image">
+                <img src="${case.fileReference @context='html'}" />
+            </div>
+
+            <div class="coe__case_study_content">
+                <div class="case_study_title">${case.title}</div>
+
+                <div class="case_study_summary">${case.summary @context='html'}</div>
+
+                <div class="case_study_cta"><a href="${case.link}" class="case_study_cta" target="${case.newPage == 'true' ? '_blank' : '_self'}">${case.btntxt}</a></div>
+            </div>
+        </div>
+    </sly>
+
+    <sly data-sly-test="${case.position == 'center' }">
+        <div id="${case.componentId}" class="coe__case_study_wrapper case_study_image_center ${case.uniqueClassName}">
+            <div class="coe__case_study_image">
+                <img src="${case.fileReference @context='html'}" />
+            </div>
+
+            <div class="coe__case_study_content">
+                <div class="case_study_title">${case.title}</div>
+
+                <div class="case_study_summary">${case.summary @context='html'}</div>
+
+                <div class="case_study_cta"><a href="${case.link}" class="case_study_cta" target="${case.newPage == 'true' ? '_blank' : '_self'}">${case.btntxt}</a></div>
+            </div>
+        </div>
+    </sly>
+
+    <sly data-sly-test="${case.position == 'back' }">
+        <div id="${case.componentId}" class="coe__case_study_wrapper case_study_image_background ${case.uniqueClassName}">
+            <div class="coe__case_study_image">
+                <img src="${case.fileReference @context='html'}" />
+            </div>
+
+            <div class="coe__case_study_content">
+                <div class="case_study_title">${case.title}</div>
+
+                <div class="case_study_summary">${case.summary @context='html'}</div>
+
+                 <div class="case_study_cta"><a href="${case.link}" class="case_study_cta" target="${case.newPage == 'true' ? '_blank' : '_self'}">${case.btntxt}</a></div>
+            </div>
+        </div>
+    </sly>
+</div>
