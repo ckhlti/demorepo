@@ -1,0 +1,28 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>
+   Edit Summary List Component
+</div>
+<sly data-sly-use.summaryList="coe.core.models.SummaryListModel"/>
+<div id="${summaryList.componentId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-summarylist'} ${accordionCard.uniqueClassName}" >
+   <div class="summaryListTile" data-sly-list="${summaryList.summaryCardList}">
+      <div class="summarylist_card" data-sly-test="${itemList.index < summaryList.maxImageItems}">
+         <div class="imagediv"><img src="${item.image}"  style="width:100%;height:200px"></div>
+         <div class="tilesummary">
+            <a href="${item.path}" target="_blank">
+               <h4><b>${item.title}</b></h4>
+            </a>
+            <p>${item.shortDescription}</p>
+         </div>
+      </div>
+   </div>
+   <div class="summarylist_cardscroll" data-sly-list="${summaryList.summaryCardList}" data-sly-test="${summaryList.isShowScroll}">
+      <div  data-sly-test="${itemList.index >=summaryList.maxImageItems}">
+         <div class="summary">
+            <a href="${item.path}" target="_blank">
+               <h4><b>${item.title}</b></h4>
+               <p>${item.shortDescription}</p>
+         </div>
+         </a>
+         <hr/>
+      </div>
+   </div>
+</div>
