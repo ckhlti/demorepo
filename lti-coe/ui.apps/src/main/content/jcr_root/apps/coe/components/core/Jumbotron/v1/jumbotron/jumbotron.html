@@ -16,7 +16,7 @@
 style="background-image:url('${properties.bgFileReference @ context='styleString'}');">
 
 <sly data-sly-test="${wcmmode.edit || wcmmode.design}">
-<sly data-sly-list="${carousel.slides}">
+<sly data-sly-list="${jumbotron.slides}">
     <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
 
 	Author slide contents for ${item.slideTitle} 
@@ -26,34 +26,34 @@ style="background-image:url('${properties.bgFileReference @ context='styleString
 </sly>
 
 <sly data-sly-test="${!(wcmmode.edit)}">
-<div id="${carousel.componentId}" class="carousel slide" data-pause="${carousel.autopauseDisabled == 'true' ? 'false' : 'hover'}" data-ride="carousel" data-interval="${carousel.autoPlay == 'true'? carousel.delay : 0}">
-    <sly data-sly-test="${carousel.indexType == 'dots'}">
+<div id="${jumbotron.componentId}" class="carousel slide" data-pause="${jumbotron.autopauseDisabled == 'true' ? 'false' : 'hover'}" data-ride="carousel" data-interval="${jumbotron.autoPlay == 'true'? jumbotron.delay : 0}">
+    <sly data-sly-test="${jumbotron.indexType == 'dots'}">
         <ol class="carousel-indicators indexDots">
-            <sly data-sly-list=${carousel.slides}>
-                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
+            <sly data-sly-list=${jumbotron.slides}>
+                  <li data-target="#${jumbotron.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
             </sly>
         </ol>
     </sly>
-    <sly data-sly-test="${carousel.indexType == 'bar'}">
+    <sly data-sly-test="${jumbotron.indexType == 'bar'}">
         <ol class="carousel-indicators indexBar">
-            <sly data-sly-list=${carousel.slides}>
-                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
+            <sly data-sly-list=${jumbotron.slides}>
+                  <li data-target="#${jumbotron.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
             </sly> 
         </ol>
     </sly>
     
-    <sly data-sly-test="${carousel.indexType == 'title'}">
+    <sly data-sly-test="${jumbotron.indexType == 'title'}">
         <ol class="carousel-indicators indexTitle">
-            <sly data-sly-list=${carousel.slides}>
-                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">${item.slideTitle}</li>
+            <sly data-sly-list=${jumbotron.slides}>
+                  <li data-target="#${jumbotron.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">${item.slideTitle}</li>
             </sly>
         </ol>
     </sly>
     
-    <sly data-sly-test="${carousel.indexType == 'icon'}">
+    <sly data-sly-test="${jumbotron.indexType == 'icon'}">
         <ol class="carousel-indicators indexIcon">
-            <sly data-sly-list=${carousel.slides}>
-                <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">
+            <sly data-sly-list=${jumbotron.slides}>
+                <li data-target="#${jumbotron.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">
                     <img src="${item.slideIconName}">
                 </li>
             </sly>
@@ -62,7 +62,7 @@ style="background-image:url('${properties.bgFileReference @ context='styleString
 
 
     <div class="carousel-inner">
-        <sly data-sly-list="${carousel.slides}">
+        <sly data-sly-list="${jumbotron.slides}">
             <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
 	      	<div class="carousel-item ${itemList.index==0? 'active' : ''}">
             	<div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
@@ -70,12 +70,12 @@ style="background-image:url('${properties.bgFileReference @ context='styleString
         </sly>
 
     </div>
-	<sly data-sly-test="${carousel.displayArrows == 'yes'}">
-        <a class="carousel-control-prev" href="#${carousel.componentId}" role="button" data-slide="prev">
+	<sly data-sly-test="${jumbotron.displayArrows == 'yes'}">
+        <a class="carousel-control-prev" href="#${jumbotron.componentId}" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#${carousel.componentId}" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#${jumbotron.componentId}" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
