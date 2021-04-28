@@ -11,13 +11,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                	<componentId
+                    <componentId
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldDescription="Enter Component ID"
                         fieldLabel="Component ID"
                         name="./componentId"
-						required="{Boolean}true"/>
+                        required="{Boolean}true"/>
                     <classname
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -30,14 +30,13 @@
                         fieldDescription="Enter height"
                         fieldLabel="Height"
                         name="./height"/>
-                     
-                     <bordercolor
+                    <bordercolor
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
                         fieldDescription="Enter Border Color"
                         fieldLabel="Bordercolor"
                         name="./bordercolor"/>
-					<backgroundcolor
+                    <backgroundcolor
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
                         fieldDescription="Enter Background Color"
@@ -48,4 +47,3 @@
         </items>
     </content>
 </jcr:root>
-

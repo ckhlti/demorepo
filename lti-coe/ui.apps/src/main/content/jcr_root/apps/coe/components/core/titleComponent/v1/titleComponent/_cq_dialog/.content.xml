@@ -11,13 +11,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                	<componentid
+                    <componentid
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldDescription="Enter Component ID"
                         fieldLabel="Component ID"
                         name="./componentId"
-						required="{Boolean}true"/>
+                        required="{Boolean}true"/>
                     <classname
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -30,42 +30,41 @@
                         fieldDescription="Enter Page Title"
                         fieldLabel="Title"
                         name="./title"/>
-                     <type
+                    <type
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/select"
+                        fieldDescription="Select H Tag"
+                        fieldLabel="Type"
+                        name="./type">
+                        <items jcr:primaryType="nt:unstructured">
+                            <H1
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Select H Tag"
-                                fieldLabel="Type"
-                                name="./type">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <H1
-                                        jcr:primaryType="nt:unstructured"
-                                        text="H1"
-                                        value="h1"/>
-                                    <H2
-                                        jcr:primaryType="nt:unstructured"
-                                        text="H2"
-                                        value="h2"/>
-                                    <H3
-                                        jcr:primaryType="nt:unstructured"
-                                        text="H3"
-                                        value="h3"/>
-                                    <H4
-                                        jcr:primaryType="nt:unstructured"
-                                        text="H4"
-                                        value="h4"/>
-                                    <H5
-                                        jcr:primaryType="nt:unstructured"
-                                        text="H5"
-                                        value="h5"/>
-                                    <P
-                                        jcr:primaryType="nt:unstructured"
-                                        text="P"
-                                        value="p"/>
-                                </items>
-                            </type>
+                                text="H1"
+                                value="h1"/>
+                            <H2
+                                jcr:primaryType="nt:unstructured"
+                                text="H2"
+                                value="h2"/>
+                            <H3
+                                jcr:primaryType="nt:unstructured"
+                                text="H3"
+                                value="h3"/>
+                            <H4
+                                jcr:primaryType="nt:unstructured"
+                                text="H4"
+                                value="h4"/>
+                            <H5
+                                jcr:primaryType="nt:unstructured"
+                                text="H5"
+                                value="h5"/>
+                            <P
+                                jcr:primaryType="nt:unstructured"
+                                text="P"
+                                value="p"/>
+                        </items>
+                    </type>
                 </items>
             </column>
         </items>
     </content>
 </jcr:root>
-

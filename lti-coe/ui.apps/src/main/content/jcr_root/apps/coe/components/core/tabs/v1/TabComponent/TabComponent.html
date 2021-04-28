@@ -1,0 +1,45 @@
+<div class="cq-placeholder section" data-emptytext="Tab Component"></div>
+
+
+<sly data-sly-use.model="${'coe.core.models.TabsSightly'}"></sly>
+<sly data-sly-test="${wcmmode.edit && !configured}">
+    <div data-emptytext="${component.title}" class="cq-placeholder"></div>
+</sly>
+
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+    <sly data-sly-list="${model.accordion}">
+        <sly data-sly-test.resourcePath="item${itemList.index}"/>
+          <a href="#${item.tabid}">${item.tabname} </a>
+
+		  <div class="TabComponent-container" data-sly-resource="${'item{0}' @ format=item.tabid, resourceType='wcm/foundation/components/responsivegrid'}"></div>
+
+    </sly>
+</sly>
+
+<sly data-sly-test="${!wcmmode.edit}">
+<sly data-sly-use.convertToJSON="coe.core.models.TabsSightly">
+    <div id="${convertToJSON.componentId}" class="container ${convertToJSON.uniqueClassName}">
+        <h2 class="coe__tab_heading" >${properties.headingmain}</h2>
+            
+                <ul class="nav nav-tabs">
+                    <sly data-sly-list.multival="${convertToJSON.accordion}" data-sly-unwrap>
+                            <li data-sly-test="${multivalList.first}"><a class="nav-link active" data-toggle="tab" href="#${multival.tabid}">${multival.tabname}</a></li>
+                            <li data-sly-test="${!multivalList.first}"><a data-toggle="tab" href="#${multival.tabid}" class="nav-link"  >${multival.tabname}</a></li>
+                    </sly>
+                </ul>
+
+                <div class="tab-content">
+                    <sly data-sly-list.multival1="${convertToJSON.accordion}" data-sly-unwrap>
+                        <div id="${multival1.tabid}" class="tab-pane fade in active show" data-sly-test="${multival1List.first}">
+                            <p><div data-sly-resource="${'item{0}' @ format=multival1.tabid, resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></div></p>
+                        </div>
+                        <div id="${multival1.tabid}" class="tab-pane fade" data-sly-test="${!multival1List.first}">
+                            <p><div data-sly-resource="${'item{0}' @ format=multival1.tabid, resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></div></p>
+                        </div>
+                    </sly>
+                </div>
+
+    </div>
+    </sly>
+
+</sly>

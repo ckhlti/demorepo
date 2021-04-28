@@ -83,7 +83,33 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
 .carousel-slide-container img {width:100%;height:auto;}
 
 /* adobe cloud container */
-.adobe-cloud-container .intro-card-heading {text-align:center;margin:20px;}
+.adobe-cloud-container .intro-card-heading {text-align:center;margin:40px;}
 .adobe-cloud-container .intro-card-heading h2 {font-size:2.6rem;color:#09138C;}
 
 .adobe-cloud-container {margin-bottom:25px;}
+.coe__intro_card_card-content{
+    min-height: 250px;
+}
+/* home page Tab */
+.offerings-container .titleComponent h2 {text-align:center;margin:40px;font-size:2.6rem}
+.coe-tabs-hp {background:#1DBAEE}
+.coe-tabs-hp ul li {width:20%;margin-right:5%;padding-left:10px;}
+.coe-tabs-hp ul li:first-child {padding-left:0px;}
+.coe-tabs-hp ul.tabs {border-bottom: solid 2px #fff;}
+.coe-tabs-hp .nav-link {background:unset;color:#fff;border:none;padding:.5rem 0;}
+.coe-tabs-hp .nav-link.active {font-weight:bold;color:#fff;border-bottom:solid 3px #fff;background:unset;}
+.coe-tabs-hp .coe__tab_heading {display:none;}
+.coe-tabs-hp .teaser {padding:0 10px;}
+.coe-tabs-hp .teaser:first-child {padding:0px 10px 0 0; }
+.coe-tabs-hp .teaser:last-child {padding:0px 0px 0 10px; }
+.coe-tabs-hp h3.cmp-teaser__title {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 10px 10px;
+}
+.coe-tabs-hp a.cmp-teaser__title-link,.coe-tabs-hp a.cmp-teaser__title-link:hover  {color:#fff;text-decoration:none;}
+/* case study container */
+.case-study-container .case-study-title-container {text-align:center;margin:40px;}
+.case-study-container .case-study-title-container h2 {font-size:2.6rem;color:#09138C;}
+
+.case-study-container {margin-bottom:25px;}

@@ -22,7 +22,7 @@
 .coe__intro_card_card-btn-container {
     text-align: center;
     width: 100%;
-    margin-top: 50px;
+    
     position:absolute;
     bottom:10px;
 }
@@ -36,7 +36,6 @@
      text-align: center;
      padding:10px;
 	position: relative;
-    min-height: 224px;
 }
 
 
