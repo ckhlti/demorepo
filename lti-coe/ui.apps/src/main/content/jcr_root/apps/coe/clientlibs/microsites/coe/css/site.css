@@ -81,3 +81,11 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
 }
 
 .carousel-slide-container img {width:100%;height:auto;}
+
+/* home page Tab */
+.coe-tabs-hp {background:#1DBAEE}
+.coe-tabs-hp ul li {width:20%;margin-right:5%}
+.coe-tabs-hp ul.tabs {border-bottom: solid 2px #fff;}
+.coe-tabs-hp .nav-link {background:unset;color:#fff;border:none;padding:.5rem 0;}
+.coe-tabs-hp .nav-link.active {font-weight:bold;color:#fff;border-bottom:solid 3px #fff;background:unset;}
+.coe-tabs-hp .coe__tab_heading {display:none;}

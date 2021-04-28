@@ -10,9 +10,8 @@ $(document).ready(function() {
         var hash = window.location.hash;
         if(hash.length > 0) {
             hash = hash.substring(1);
-            $('li a[href$='+hash+']').parent().addClass('active').tab('show');
-            $('+hash+').parent().addClass('active').tab('show');
-            console.log(hash+'1');
+            $('li a[href$='+hash+']').addClass('active').tab('show');
+            $('#'+hash).addClass('active show').tab('show');
         }
     });
 });

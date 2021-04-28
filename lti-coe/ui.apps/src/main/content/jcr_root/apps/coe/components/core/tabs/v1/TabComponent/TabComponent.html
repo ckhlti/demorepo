@@ -1,9 +1,5 @@
-<h3>This is tab component.</h3>
 <div class="cq-placeholder section" data-emptytext="Tab Component"></div>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <sly data-sly-use.model="${'coe.core.models.TabsSightly'}"></sly>
 <sly data-sly-test="${wcmmode.edit && !configured}">
@@ -15,39 +11,35 @@
         <sly data-sly-test.resourcePath="item${itemList.index}"/>
           <a href="#${item.tabid}">${item.tabname} </a>
 
-   <div class="TabComponent-container" data-sly-resource="${'item{0}' @ format=itemList.count, resourceType='wcm/foundation/components/parsys'}">
-        </div>
+		  <div class="TabComponent-container" data-sly-resource="${'item{0}' @ format=itemList.count, resourceType='wcm/foundation/components/responsivegrid'}"></div>
 
-          ${item.tabdesc}<br>
     </sly>
 </sly>
 
 <sly data-sly-test="${!wcmmode.edit}">
-<div class="container">
-    <h2>${properties.headingmain}</h2>
-         
-        <sly data-sly-use.convertToJSON="coe.core.models.TabsSightly">
-            <ul class="nav nav-tabs">
-                <sly data-sly-list.multival="${convertToJSON.accordion}" data-sly-unwrap>
-                        <li class="active" data-sly-test="${multivalList.first}"><a data-toggle="tab" href="#${multival.tabid}">${multival.tabname}</a></li>
-						<li data-sly-test="${!multivalList.first}"><a data-toggle="tab" href="#${multival.tabid}" class="nav-link"  >${multival.tabname}</a></li>
-                </sly>
-            </ul>
+<sly data-sly-use.convertToJSON="coe.core.models.TabsSightly">
+    <div id="${convertToJSON.componentId}" class="container ${convertToJSON.uniqueClassName}">
+        <h2 class="coe__tab_heading" >${properties.headingmain}</h2>
+            
+                <ul class="nav nav-tabs">
+                    <sly data-sly-list.multival="${convertToJSON.accordion}" data-sly-unwrap>
+                            <li data-sly-test="${multivalList.first}"><a class="nav-link active" data-toggle="tab" href="#${multival.tabid}">${multival.tabname}</a></li>
+                            <li data-sly-test="${!multivalList.first}"><a data-toggle="tab" href="#${multival.tabid}" class="nav-link"  >${multival.tabname}</a></li>
+                    </sly>
+                </ul>
 
-            <div class="tab-content">
-                <sly data-sly-list.multival1="${convertToJSON.accordion}" data-sly-unwrap>
-                    <div id="${multival1.tabid}" class="tab-pane fade in active" data-sly-test="${multival1List.first}">
-                        <h3>${multival1.tabdesc}</h3>     
-                        <p><div data-sly-resource="${'item{0}' @ format=multival1List.count, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div></p>
-                    </div>
-					<div id="${multival1.tabid}" class="tab-pane fade" data-sly-test="${!multival1List.first}">
-                        <h3>${multival1.tabdesc}</h3>     
-                        <p><div data-sly-resource="${'item{0}' @ format=multival1List.count, resourceType='wcm/foundation/components/parsys'}" data-sly-unwrap></div></p>
-                    </div>
-                </sly>
-            </div>
+                <div class="tab-content">
+                    <sly data-sly-list.multival1="${convertToJSON.accordion}" data-sly-unwrap>
+                        <div id="${multival1.tabid}" class="tab-pane fade in active show" data-sly-test="${multival1List.first}">
+                            <p><div data-sly-resource="${'item{0}' @ format=multival1List.count, resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></div></p>
+                        </div>
+                        <div id="${multival1.tabid}" class="tab-pane fade" data-sly-test="${!multival1List.first}">
+                            <p><div data-sly-resource="${'item{0}' @ format=multival1List.count, resourceType='wcm/foundation/components/responsivegrid'}" data-sly-unwrap></div></p>
+                        </div>
+                    </sly>
+                </div>
 
-        </sly>
-</div>
+    </div>
+    </sly>
 
 </sly>
