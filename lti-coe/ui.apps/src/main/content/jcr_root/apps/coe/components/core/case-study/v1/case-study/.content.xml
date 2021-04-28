@@ -4,5 +4,5 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="cq:Component"
-    jcr:title="Accordion Card V1"
+    jcr:title="Case Study V1"
     componentGroup="coe - Core"/>

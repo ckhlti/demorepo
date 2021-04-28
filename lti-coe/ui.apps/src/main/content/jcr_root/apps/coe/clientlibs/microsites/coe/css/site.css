@@ -113,3 +113,6 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
 .case-study-container .case-study-title-container h2 {font-size:2.6rem;color:#09138C;}
 
 .case-study-container {margin-bottom:25px;}
+.case-study {padding:5px;}
+.case-study-container .case_study_title {white-space:unset;}
+.case-study-container .case_study_summary {padding:0px;}
