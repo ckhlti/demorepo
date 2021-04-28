@@ -1,0 +1,86 @@
+<sly data-sly-use.carousel="coe.core.models.CarouselModel"></sly>
+<sly data-sly-use.jumbotron="coe.core.models.JumbotronModel"></sly>
+
+
+<style>
+  <sly data-sly-test="${jumbotron.textColor}">
+     .jumbotron-foreground{color : ${jumbotron.textColor}} !important}
+  
+ </sly>  
+
+
+
+</style>
+
+<div id="${properties.componentId}" class="jumbotron-backgroundImg jumbotron-foreground" 
+style="background-image:url('${properties.bgFileReference @ context='styleString'}');">
+
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+<sly data-sly-list="${carousel.slides}">
+    <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
+
+	Author slide contents for ${item.slideTitle} 
+    
+    <div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+</sly>
+</sly>
+
+<sly data-sly-test="${!(wcmmode.edit)}">
+<div id="${carousel.componentId}" class="carousel slide" data-pause="${carousel.autopauseDisabled == 'true' ? 'false' : 'hover'}" data-ride="carousel" data-interval="${carousel.autoPlay == 'true'? carousel.delay : 0}">
+    <sly data-sly-test="${carousel.indexType == 'dots'}">
+        <ol class="carousel-indicators indexDots">
+            <sly data-sly-list=${carousel.slides}>
+                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
+            </sly>
+        </ol>
+    </sly>
+    <sly data-sly-test="${carousel.indexType == 'bar'}">
+        <ol class="carousel-indicators indexBar">
+            <sly data-sly-list=${carousel.slides}>
+                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}"></li>
+            </sly> 
+        </ol>
+    </sly>
+    
+    <sly data-sly-test="${carousel.indexType == 'title'}">
+        <ol class="carousel-indicators indexTitle">
+            <sly data-sly-list=${carousel.slides}>
+                  <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">${item.slideTitle}</li>
+            </sly>
+        </ol>
+    </sly>
+    
+    <sly data-sly-test="${carousel.indexType == 'icon'}">
+        <ol class="carousel-indicators indexIcon">
+            <sly data-sly-list=${carousel.slides}>
+                <li data-target="#${carousel.componentId}" data-slide-to="${itemList.index}" class="${itemList.index == 0 ? 'active' : ''}">
+                    <img src="${item.slideIconName}">
+                </li>
+            </sly>
+        </ol>
+    </sly>
+
+
+    <div class="carousel-inner">
+        <sly data-sly-list="${carousel.slides}">
+            <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
+	      	<div class="carousel-item ${itemList.index==0? 'active' : ''}">
+            	<div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+			</div>
+        </sly>
+
+    </div>
+	<sly data-sly-test="${carousel.displayArrows == 'yes'}">
+        <a class="carousel-control-prev" href="#${carousel.componentId}" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#${carousel.componentId}" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+	</sly>
+</div>
+
+</sly>
+</div>
