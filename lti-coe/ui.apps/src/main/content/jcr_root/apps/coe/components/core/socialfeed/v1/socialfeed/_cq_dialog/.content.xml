@@ -22,12 +22,17 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <componentId
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Component Id"
+                                        name="./componentId"
+                                        required="{Boolean}true"/>
                                     <url
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                         fieldLabel="URL field"
-                                        name="./socialurl"
-                                        required="{Boolean}true"/>
+                                        name="./socialurl"/>
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -40,9 +45,14 @@
                                         name="./socialsummary"/>
                                     <imageupload
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fileupload"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}true"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
                                         fieldLabel="Upload Image"
-                                        mimeTypes="[image/png,image/jpeg]"
+                                        fileNameParameter="./fileName"
+                                        fileReferenceParameter="./fileReference"
+                                        mimeTypes="[image/png,image/jpeg,image/svg+xml,image/webp,image/gif]"
                                         multiple="{Boolean}false"
                                         name="./socialimage"
                                         text="Upload image here"/>
@@ -52,8 +62,24 @@
                                         checked="{Boolean}true"
                                         name="./fb"
                                         text="Facebook"
-                                        uncheckedValue="_self"
-                                        value="_blank"/>
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <twitter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        checked="{Boolean}true"
+                                        name="./twitter"
+                                        text="Twitter"
+                                        uncheckedValue="false"
+                                        value="true"/>
+                                    <linkedin
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        checked="{Boolean}true"
+                                        name="./linkedin"
+                                        text="Linkedin"
+                                        uncheckedValue="false"
+                                        value="true"/>
                                 </items>
                             </column>
                         </items>
