@@ -1,9 +1,9 @@
 
-<sly data-sly-set.linkTarget="${climg.link && climg.linkTarget == 'true' ? '_blank' : ''}"/>
+
 
   <div data-sly-use.climg="coe.core.models.ClickableImageModel">
-
-  <button 
+    <sly data-sly-set.linkTarget="${climg.link && climg.linkTarget == 'true' ? '_blank' : ''}"/>
+  <button id="${climg.componentId}" class="${climg.uniqueClassName}"
         data-sly-element="${climg.link ? 'a' : 'button'}"
         type="${climg.link ? '' : 'button'}"
         class="cmp-button"

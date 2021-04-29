@@ -43,6 +43,19 @@
                                                 name="./linkTarget"
                                                 uncheckedValue="{Boolean}false"
                                                 value="{Boolean}true"/>
+                                            <componentid
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Component Id"
+                                                fieldLabel="Component Id"
+                                                name="./componentId"
+                                                required="{Boolean}true"/>
+                                            <uniqueclassname
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter CSS Classname to be added to the component wrapper"
+                                                fieldLabel="Unique Class Name"
+                                                name="./uniqueClassName"/>
                                         </items>
                                     </column>
                                 </items>
