@@ -116,3 +116,15 @@ footer.experiencefragment {border-top:solid 3px #ccc;}
 .case-study {padding:5px;}
 .case-study-container .case_study_title {white-space:unset;}
 .case-study-container .case_study_summary {padding:0px;}
+
+/* Tools page navigation */
+.tools-left-navigation .navigation {border-right:solid 1px #d8d8d8;}
+.tools-left-navigation ul li {list-style:none;}
+.tools-left-navigation ul li a {text-decoration:none; color:#000;line-height:35px;}
+.tools-left-navigation .cmp-navigation__item--level-0 > a {position:relative;display:block;}
+.tools-left-navigation .nav_collapsed:after {
+                content: "\F078";position:absolute;right:10px;top:10px;font:normal normal normal 14px/1 FontAwesome
+        }
+.tools-left-navigation .nav_expanded:after {
+                content: "\F078";position:absolute;right:10px;top:10px;font:normal normal normal 14px/1 FontAwesome;transform:rotate(180deg);transform-origin: 50% 50%;
+        }
