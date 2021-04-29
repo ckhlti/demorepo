@@ -39,6 +39,8 @@ import org.slf4j.LoggerFactory;
 	    private String backgroundcolor;		
 	    @ValueMapValue 
 	    private String bordercolor;
+	    @ValueMapValue 
+	    private String borderstyle;
 		
 		@PostConstruct
 	    protected void init() {
@@ -83,6 +85,9 @@ import org.slf4j.LoggerFactory;
 		}
 		public String getBordercolor() {
 		return bordercolor;
+		}
+		public String getBorderstyle() {
+		return borderstyle;
 		}
 		public String getHeight() {
 		return height;

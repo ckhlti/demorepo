@@ -1,10 +1,9 @@
+.coe_horizontal_divider_class{
 
-.coe-hdclass{
-
-    background:#00008c;
-    color: #fff;
-    padding:10px 15px;
-
+	height:30px;
+    background:#649AD3;
+    border:solid 2px black;    
     text-decoration:none;
-}
-     
+    border-style:none;
+
+} 
