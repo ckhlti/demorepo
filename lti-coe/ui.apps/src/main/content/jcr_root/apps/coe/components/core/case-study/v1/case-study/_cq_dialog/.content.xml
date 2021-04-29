@@ -123,7 +123,7 @@
                                         required="{Boolean}false"/>
                                     <link
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                         fieldDescription="Target Link"
                                         fieldLabel="Link for the button"
                                         name="./link"
@@ -149,9 +149,9 @@
                                         value="true"/>
                                     <image
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
                                         autoStart="{Boolean}false"
-                                        autoUpload="{Boolean}false"
+                                        autoUpload="{Boolean}true"
                                         class="cq:droptarget"
                                         fieldLabel="Banner Image"
                                         fileNameParameter="./fileName"
