@@ -1,11 +1,15 @@
 
-
+  <sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+    <h2>Author this clickable image</h2>
+  </sly>
 
   <div data-sly-use.climg="coe.core.models.ClickableImageModel">
     <sly data-sly-set.linkTarget="${climg.link && climg.linkTarget == 'true' ? '_blank' : ''}"/>
+
+  
   <button id="${climg.componentId}" class="${climg.uniqueClassName}"
-        data-sly-element="${climg.link ? 'a' : 'button'}"
-        type="${climg.link ? '' : 'button'}"
+        data-sly-element="${climg.link ? 'a' : 'div'}"
+        type="${climg.link ? 'button' : ''}"
         class="cmp-button"
         href="${climg.link}"
         rel="${climg.linkTarget == '_blank' ? 'noopener' : ''}"
