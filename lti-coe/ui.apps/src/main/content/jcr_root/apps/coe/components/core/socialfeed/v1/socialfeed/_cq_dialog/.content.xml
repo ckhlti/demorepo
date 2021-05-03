@@ -28,6 +28,12 @@
                                         fieldLabel="Component Id"
                                         name="./componentId"
                                         required="{Boolean}true"/>
+                                    <uniqueClassName
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldLabel="Unique Class Name"
+                                        name="./uniqueClassName"
+                                        required="{Boolean}false"/>
                                     <url
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

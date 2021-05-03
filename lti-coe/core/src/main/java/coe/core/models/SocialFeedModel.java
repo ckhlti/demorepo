@@ -82,6 +82,9 @@ public class SocialFeedModel {
     @ValueMapValue
     private String componentId;
 
+    @ValueMapValue
+    private String uniqueClassName;
+
     @Inject
     private String socialurl;
  
@@ -135,7 +138,10 @@ public class SocialFeedModel {
         return linkedin;
     }
 
-    public String getComponentid(){
+    public String getComponentId(){
         return componentId;
     }
+    public String getUniqueClassName(){
+        return uniqueClassName;
+    }    
 }
