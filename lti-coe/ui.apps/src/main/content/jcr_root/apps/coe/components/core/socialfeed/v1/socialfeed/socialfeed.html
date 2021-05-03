@@ -1,0 +1,23 @@
+<sly data-sly-use.social="coe.core.models.SocialFeedModel"></sly>
+
+<sly data-sly-test.url="${request.requestURL.toString}"/>
+<sly data-sly-test="${social.socialurl}">
+    <sly data-sly-test.url="${social.socialurl}"/>
+</sly>
+
+<div id="${social.componentId}" class="${social.uniqueClassName}">
+<a href="#" class="coe__socialfeed_fb" style="color: #3b5998;" rel="nofollow" target="_blank" data-url="${url}" data-summary="${social.socialsummary}" data-title="${social.socialtitle}">
+    <i class="fab fa-facebook-f fa-2x" data-sly-test="${social.fb}"></i>
+</a>&ensp;
+
+<a href="#" class="coe__socialfeed_twitter" style="color: #55acee;" target="_blank"  data-url="${url}" data-summary="${social.socialsummary}"  data-title="${social.socialtitle}">
+    <i class="fab fa-twitter fa-2x" data-sly-test="${social.twitter}"></i> 
+</a>&ensp; 
+
+<a href="#" class="coe__socialfeed_ln" style="color: #0e76a8;" rel="nofollow" target="_blank"  data-url="${url}" data-summary="${social.socialsummary}"  data-title="${social.socialtitle}">
+    <i class="fab fa-linkedin-in fa-2x" data-sly-test="${social.linkedin}"></i>
+</a> 
+</div>
+
+
+

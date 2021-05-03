@@ -2,3 +2,4 @@
 
 bootstrap.min.css
 font-awesome.min.css
+fontawesome-icon.min.css
