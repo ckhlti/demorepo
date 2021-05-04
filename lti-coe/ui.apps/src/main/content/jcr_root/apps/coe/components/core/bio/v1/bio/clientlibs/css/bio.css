@@ -9,10 +9,10 @@
 .coe__bio_content .bio_summary {font-style:italic; font-size: .8rem;height:45px}
 .coe__bio_content .bio_email {height:20px;}
 .coe__bio_content .bio_email a,.coe__bio_content .bio_email a:hover, .coe__bio_content .bio_email a:visited {text-decoration:none;}
-.coe__bio_content .bio_social {padding:10px 0;display: flex;
+.coe__bio_content .bio_social {padding:10px 0;display: inline-block;
     /* flex: auto; */
-    width: 120px;
-    margin: auto;
+    width: 100%;
+    text-align:center;
     height:25px;
 }
 .coe__bio_content .bio_social .bio_social_fb {    
@@ -29,7 +29,7 @@
     width: 20px;
     height: 20px;
     display: inherit;
-    margin: auto;
+    margin: 0 8px;
 }
 
 .coe__bio_contact {
