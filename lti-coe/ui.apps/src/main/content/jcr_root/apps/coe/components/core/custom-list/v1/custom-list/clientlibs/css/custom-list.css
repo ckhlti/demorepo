@@ -1,0 +1,15 @@
+.coe__custom_list_outer{
+background: #F0F0F0;
+}
+
+.coe__custom_list-header{
+padding-left: 50px;
+padding-top: 15px;
+padding-bottom: 5px;
+color: #09138C;
+}
+
+.coe__custom_list-content li{
+color: black;
+text-decoration: underline;
+}
