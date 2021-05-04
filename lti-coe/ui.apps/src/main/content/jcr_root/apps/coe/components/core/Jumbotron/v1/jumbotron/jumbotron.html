@@ -4,12 +4,9 @@
 
 <style>
   <sly data-sly-test="${jumbotron.textColor}">
-     .jumbotron-foreground{color : ${jumbotron.textColor}} !important}
+   .jumbotron-foreground{color : ${jumbotron.textColor}} !important}
   
  </sly>  
-
-
-
 </style>
 
 <div  class="jumbotron-backgroundImg jumbotron-foreground" 
@@ -21,12 +18,12 @@ style="background-image:url('${properties.bgFileReference @ context='styleString
 
 	Author slide contents for ${item.slideTitle} 
     
-    <div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+    <div class="jumbotron-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
 </sly>
 </sly>
 
 <sly data-sly-test="${!(wcmmode.edit)}">
-<div id="${jumbotron.componentId}" class="carousel slide" data-pause="${jumbotron.autopauseDisabled == 'true' ? 'false' : 'hover'}" data-ride="carousel" data-interval="${jumbotron.autoPlay == 'true'? jumbotron.delay : 0}">
+<div id="${jumbotron.componentId}" class="carousel slide jumbotron-foreground ${jumbotron.uniqueClassName}" data-pause="${jumbotron.autopauseDisabled == 'true' ? 'false' : 'hover'}" data-ride="carousel" data-interval="${jumbotron.autoPlay == 'true'? jumbotron.delay : 0}">
     <sly data-sly-test="${jumbotron.indexType == 'dots'}">
         <ol class="carousel-indicators indexDots">
             <sly data-sly-list=${jumbotron.slides}>
@@ -65,7 +62,7 @@ style="background-image:url('${properties.bgFileReference @ context='styleString
         <sly data-sly-list="${jumbotron.slides}">
             <sly data-sly-test.resourcePath="slide-${item.slideId}"/>
 	      	<div class="carousel-item ${itemList.index==0? 'active' : ''}">
-            	<div class="carousel-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+            	<div class="jumbotron-slide-container" data-sly-resource="${resourcePath @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
 			</div>
         </sly>
 
