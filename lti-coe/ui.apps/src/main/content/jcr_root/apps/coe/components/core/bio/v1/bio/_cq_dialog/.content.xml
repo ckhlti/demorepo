@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="CTA Button"
+    jcr:title="Bio"
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
@@ -38,17 +38,205 @@
                                         fieldDescription="Enter CSS Classname to be added to the component wrapper"
                                         fieldLabel="Unique Class Name"
                                         name="./uniqueClassName"/>
-                                    <title
+                                    <noofbios
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldDescription="Select number of bios to be displayed in a row."
+                                        fieldLabel="Number of bio in a row"
+                                        max="{Long}4"
+                                        min="{Long}2"
+                                        name="./noOfBios"
+                                        required="{Boolean}false"/>
+                                    <noofrows
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                        fieldDescription="Number of rows to be displayed"
+                                        fieldLabel="Number of rows"
+                                        min="{Long}1"
+                                        name="./noOfRows"
+                                        required="{Boolean}false"/>
+                                    <ctalabel
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldDescription="Title for the accordion"
-                                        fieldLabel="Title"
-                                        name="./title"
-                                        required="{Boolean}false"/>
+                                        fieldDescription="text for the Load More button"
+                                        fieldLabel="Show More Caption"
+                                        name="./showMoreCaptionCTA"/>
+                                    <ctavalue
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="button text for data-contact-button"
+                                        fieldLabel="Show More Details"
+                                        name="./showMoreDetailsCTA"/>
                                 </items>
                             </columns>
                         </items>
                     </common>
+                    <details
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Bio Details"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <biocards
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldDescription="Click Add to create bios"
+                                        fieldLabels="Bio Cards"
+                                        required="{Boolean}false">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            emptyText="Bio Card Details"
+                                            name="./biocards">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <columns
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <name
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Bio Name"
+                                                            name="./name"/>
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Bio Title"
+                                                            name="./title"/>
+                                                        <summary
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Bio Summary"
+                                                            name="./summary"/>
+                                                        <email
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Email"
+                                                            name="./email"/>
+                                                        <social_fb
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Facebook URL"
+                                                            name="./social_fb"/>
+                                                        <social_ln
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="LinkedIn URL"
+                                                            name="./social_ln"/>
+                                                        <social_twitter
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldLabel="Twitter URL"
+                                                            name="./social_twitter"/>
+                                                        <image
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <file
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                    autoStart="{Boolean}false"
+                                                                    class="cq-droptarget"
+                                                                    fieldLabel="Bio Image"
+                                                                    fileNameParameter="./imageName"
+                                                                    fileReferenceParameter="./image"
+                                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                                    multiple="{Boolean}false"
+                                                                    name="./mobileFile"
+                                                                    title="Upload Image for the bio"
+                                                                    uploadUrl="${suffix.path}"
+                                                                    useHTML5="{Boolean}true"/>
+                                                            </items>
+                                                        </image>
+                                                        <detailtype
+                                                            granite:class="cq-dialog-dropdown-showhide"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                            emptyText="Select detail type"
+                                                            fieldDescription="Choose type of detail"
+                                                            fieldLabel="Detail Type"
+                                                            name="./details_type">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <link
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Link"
+                                                                    value="link"/>
+                                                                <content
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Content"
+                                                                    value="content"/>
+                                                                <fragment
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Fragment"
+                                                                    value="fragment"/>
+                                                            </items>
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                cq-dialog-dropdown-showhide-target=".showhidetargets"/>
+                                                        </detailtype>
+                                                        <targetlink
+                                                            granite:class="showhidetargets"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                showhidetargetvalue="link"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <bioLink
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    emptyText="Select bio link"
+                                                                    fieldLabel="Bio Link"
+                                                                    name="./bioLink"/>
+                                                            </items>
+                                                        </targetlink>
+                                                        <targetcontent
+                                                            granite:class="showhidetargets"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                showhidetargetvalue="content"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <details
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                                    fieldLabel="Content Details"
+                                                                    name="./details"
+                                                                    useFixedInlineToolbar="{Boolean}true"/>
+                                                            </items>
+                                                        </targetcontent>
+                                                        <targetfragment
+                                                            granite:class="showhidetargets"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <granite:data
+                                                                jcr:primaryType="nt:unstructured"
+                                                                showhidetargetvalue="fragment"/>
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <exp_fragment
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                    emptyText="Experience fragment variation path"
+                                                                    fieldLabel="Choose Experience Fragment"
+                                                                    name="./fragment_details"
+                                                                    rootPath="/content/experience-fragments/coe"/>
+                                                            </items>
+                                                        </targetfragment>
+                                                    </items>
+                                                </columns>
+                                            </items>
+                                        </field>
+                                    </biocards>
+                                </items>
+                            </columns>
+                        </items>
+                    </details>
                 </items>
             </tabs>
         </items>

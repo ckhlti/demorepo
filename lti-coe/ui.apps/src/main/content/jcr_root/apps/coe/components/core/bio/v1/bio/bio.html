@@ -1,34 +1,38 @@
-<div id="case-study-001" class="coe__bio_wrapper" data-contact-button="Details" data-cards-per-row="4" data-number-of-rows="1" data-bio-details='[{ "name": "1-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "bioLink": "https://www.foxnews.com" }, { "name": "2-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"fragment" }, { "name": "3-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"content", "details": "This displays detailed bio information as entered by author in dialog" }, { "name": "4-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"fragment", "details": "https://www.foxnews.com" }, { "name": "5-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "6-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "7-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "8-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "9-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "10-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }, { "name": "11-Ravikumar Balasubramanian", "title": "Senior Specialist - Digital", "summary": "This is summary content", "email": "xxx@yyy.com", "social_fb": "http://wwww.facebook.com", "social-ln": "https://linkedin.com", "social_twitter": "https://www.twitter.com", "image": "https://www.innerproductpartners.com/wp-content/uploads/2016/01/placeholder-avatar-300x300.jpg", "details_type":"link", "details": "https://www.foxnews.com" }]'>
-<div class="coe__bio_card_wrapper"></div>
-<div class="clear"></div>
-<div class="coe__bio_loadmore"><button onclick="loadNextSetBios('case-study-001')">Load More</button></div>
+<sly data-sly-use.bio="coe.core.models.BioCardModel" />
 
-   <div id="coe__bio_details_popup" class="bio_popup_component">
-      <div class="bio_popup_wrapper"></div>
-      <div class="bio_popup_contents">
-         <div>
-            <div class="bio_close_button" onclick="bio_closePopup('#coe__bio_details_popup')"></div>
-         </div>
-         <div class="bio_popup_scrollable">
-            <div id="coe__bio_popup_detail_content"></div>
-         </div>
-      </div>
+
+<div id="${bio.componentId}" class="coe__bio_wrapper ${bio.uniqueClassName}" 
+   data-contact-button="${bio.showMoreDetailsCTA}" data-cards-per-row="${bio.noOfBios}" data-number-of-rows="${bio.noOfRows}" 
+   data-bio-details=${bio.getJson} >
+   <div class="coe__bio_card_wrapper"></div>
+   <div class="clear"></div>
+   <div class="coe__bio_loadmore">
+      <button onclick="loadNextSetBios('${bio.componentId @context='html'}')">${bio.showMoreCaptionCTA}</button>
    </div>
 
-<!-- Experience fragment content repeat for each bio card if they selected experience fragment -->
 
-   <div id="coe__bio_details_popup_1" class="bio_popup_component">
-      <div class="bio_popup_wrapper"></div>
-      <div class="bio_popup_contents">
-         <div>
-            <div class="bio_close_button" onclick="bio_closePopup('#coe__bio_details_popup_1')"></div>
-         </div>
-         <div class="bio_popup_scrollable">
-            <div id="coe__bio_popup_detail_content">
-				this is popup detail from fragment
-			</div>
+   <!-- Experience fragment content repeat for each bio card if they selected experience fragment -->
+   <sly data-sly-list.bioitem=${bio.biocards}>
+      <div id="coe__bio_details_popup_${bioitemList.index}" class="bio_popup_component">
+         <div class="bio_popup_wrapper"></div>
+         <div class="bio_popup_contents">
+            <div>
+               <div class="bio_close_button" onclick="bio_closePopup('#coe__bio_details_popup_${bioitemList.index @context='scriptString'}')"></div>
+            </div>
+            <div class="bio_popup_scrollable">
+               <div id="coe__bio_popup_detail_content">
+                  <sly data-sly-test ="${bioitem.details_type == 'fragment'}">
+                     <sly data-sly-test.fragmentpath ="${bioitem.fragment_details @context='html'}"/>
+                     <sly data-sly-resource="${fragmentpath @ wcmmode=disabled}"></sly>
+                  </sly>
+                  <sly data-sly-test ="${bioitem.details_type == 'content'}">
+                     ${bioitem.details @context='html'}
+                  </sly>
+               </div>
+            </div>
          </div>
       </div>
-   </div>
+   </sly>
+
+
 </div>
-
