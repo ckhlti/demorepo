@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Custom List Dialog"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_5_docs_component_en#List - HTL">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <prop
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Properties"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <componentid
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Component Id"
+                                fieldLabel="Component Id"
+                                name="./componentId"
+                                required="{Boolean}true"/>
+                            <uniqueclassname
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter CSS Classname to be added to the component wrapper"
+                                fieldLabel="Unique Class Name"
+                                name="./uniqueClassName"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="What will be the title of the List that will be displayed?"
+                                fieldLabel="Title of the List"
+                                name="./title"
+                                required="{Boolean}false"/>
+                            <size
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Select H tag to determine the size of the title"
+                                fieldLabel="Size of the List Title"
+                                name="./size"
+                                required="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <H1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1 Html Size"
+                                        value="h1"/>
+                                    <H2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2 Html Size"
+                                        value="h2"/>
+                                    <H3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3 Html Size"
+                                        value="h3"/>
+                                    <H4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4 Html Size"
+                                        value="h4"/>
+                                    <H5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5 Html Size"
+                                        value="h5"/>
+                                    <P
+                                        jcr:primaryType="nt:unstructured"
+                                        text="P Html Size"
+                                        value="p"/>
+                                </items>
+                            </size>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldDescription="Points for the list"
+                                fieldLabel="Point for the List">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./multifield">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <des
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Point Title"
+                                                    name="./point"/>
+                                                <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Anchor Link (Optional)"
+                                                    name="./link"/>
+                                                <newPage
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    name="./newPage"
+                                                    text="Open anchor link in a new window?"
+                                                    uncheckedValue="false"
+                                                    value="true"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </content>
+                        </items>
+                    </column>
+                </items>
+            </prop>
+        </items>
+    </content>
+</jcr:root>

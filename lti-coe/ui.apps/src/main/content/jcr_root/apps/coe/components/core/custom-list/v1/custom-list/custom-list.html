@@ -1,0 +1,18 @@
+<div data-sly-use.customlist="coe.core.models.CustomList">
+    <div id="${customlist.componentId}" class="coe__custom_list_outer ${customlist.uniqueClassName}">
+        <div class="coe__custom_list-content">
+            <div data-sly-element="${customlist.size}">
+                <div class="coe__custom_list-header">${customlist.title}</div>
+            </div>
+
+            <ul class="coe__custom_list-content">
+                <div data-sly-test="${customlist.content}" data-sly-list.list="${customlist.content}">
+                    <a x-cq-linkchecker="skip" href="${list.link}" target="${list.newPage == 'true' ? '_blank' : '_self'}">
+                        <li>${list.point}</li>
+                    </a>
+                    <br />
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
