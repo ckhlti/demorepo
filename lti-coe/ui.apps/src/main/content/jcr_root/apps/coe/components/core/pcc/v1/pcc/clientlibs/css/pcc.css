@@ -1,50 +1,6 @@
-/* COE CTA */
-/* for cta button type */
-.coe-cta-button a{
-     display:inline-flex;
-     line-height:28px;
- }
- .coe-cta-button.button a{
-     background:#00008c;
-     color: #fff;
-     padding:10px 15px;
-     border-radius: 10px;
-     text-decoration:none;
- }
- /* CTA button icon type */
- .coe-cta-button.icon a {
-     line-height:0px;
-     font-size:0px;
-     color:transparent;
- }
- .coe-cta-button.icon .right-arrow {
-     display: inline-block;
-     height: 60px;
-     width: 60px;
-     background-size: contain;
-     font-size: 0px;
-     color:transparent;
-     background-repeat: no-repeat;
- }
- 
- .coe-cta-button .icon-as-button {
-     display: inline-flex;
-     height: 30px;
-     width: 30px;
-     background-size: contain;
-     font-size: 0px;
-     color:transparent;
-     background-repeat: no-repeat;
-     margin-left:10px;
- }
- 
- /* cta alignment */
- .coe-cta-button.left {
-      text-align:left;
-         }
- .coe-cta-button.right {
-      text-align:right;
-         }
- .coe-cta-button.center {
-      text-align:center;
-         }        
+.pcc__table_wrapper {width:100%;}
+.pcc__table_wrapper tbody, .pcc__table_wrapper tr, .pcc__table_wrapper td {border:solid 1px #ccc;}
+.pcc__table_wrapper td {width:30%; text-align:left;vertical-align:top;padding:5px}
+.pcc__table_wrapper td:first-child {width:10%;text-align:center;vertical-align:middle}
+tr.grayBackground  {background:#dcdcdc;}
+tr.pcc__product_header td {text-align:Center;}
