@@ -1,0 +1,32 @@
+Dialog 
+has two tabs
+TAB 1 : Properties
+- componentId - Auto generated / author overridable
+- uniqueClassName - TExt field
+- number_of_bios_in_row - Number range (2 to 4) selected by author, updates alue for data-cards-per-row
+- number_of_rows_to_display - Numeric number selected by author, updates value for data-number-of-rows
+- Show More caption - Text field - updates the button text for LOAD MORE
+- Show more details - text field - Updates the button text for data-contact-button
+
+TAB 2 : Bio details
+Multifield with following fields
+name - text
+title - text
+summary - text
+email - text field
+social_fb - text field for link to facebook
+social_ln - text field for link to linkedin
+social_twitter - text field for link to social_twitter
+image - Path brower to select/upload image
+details_type : dropdown with options - Link, Content, Fragment
+bioLink : Path browser to select a url or enter a URL,
+details : rich text
+exp_fragment : path to select an exp. Fragment
+
+
+On HTML, replace the parts with dialog value.
+For section under "Experience Fragment....", loop through the bio cards and if details_type is selected as fragment or content, then generate the HTML snippet for that bio cards
+coe__bio_details_popup_1 - replace 1 with count. If content, populate the div with id= coe__bio_popup_detail_content with details from dialog. If fragment, then include the experience fragment
+
+
+
