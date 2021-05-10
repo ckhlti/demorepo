@@ -1,0 +1,17 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>
+   Edit Video Player Component
+</div>
+<sly data-sly-use.searchModel="coe.core.models.VideoPlayerModel">
+   <div id="${searchModel.componentId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-videoplayer'} ${searchModel.uniqueClassName}" >
+      <div class="damvideo" data-sly-test='${searchModel.videoSourceType=="dam"}'>
+         <video id="vid" controls="${searchModel.controlbar!='true'?'controls':''}" autoplay="${searchModel.loop=='true'?'autoplay':''}" loop="${searchModel.loop=='true'?'loop':''}">
+            <source src="${searchModel.damvideopath}" />
+         </video>
+      </div>
+      <div  class="videoyoutube" data-sly-test='${searchModel.videoSourceType=="youtube"}'>
+         <div class="aspect-ratio">
+            <iframe src="https://www.youtube.com/embed/${searchModel.videoyoutubeurl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" encrypted-media" allowfullscreen></iframe>
+         </div>
+      </div>
+   </div>
+</sly>

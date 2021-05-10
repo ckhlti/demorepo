@@ -1,0 +1,11 @@
+.damvideo video {
+
+  height:auto;
+  width:800px
+}
+
+.videoyoutube iframe{
+height:480px;
+width:853px;
+        }
+
