@@ -52,6 +52,7 @@
                                         composite="{Boolean}true"
                                         fieldDescription="Click Add to create features"
                                         fieldLabel="Product Features"
+                                        id="featureMulti"
                                         required="{Boolean}false">
                                         <field
                                             jcr:primaryType="nt:unstructured"
@@ -67,12 +68,36 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                             fieldLabel="Feature Name"
+                                                            id="featureName"
                                                             name="./featureName"/>
                                                     </items>
                                                 </columns>
                                             </items>
                                         </field>
                                     </features>
+                                    <type
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        emptyText="Select feature type"
+                                        fieldDescription="Choose type of feature"
+                                        fieldLabel="Feature Type"
+                                        id="category"
+                                        name="./type">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Link"
+                                                value="link"/>
+                                            <content
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Content"
+                                                value="content"/>
+                                            <fragment
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Fragment"
+                                                value="fragment"/>
+                                        </items>
+                                    </type>
                                 </items>
                             </columns>
                         </items>
