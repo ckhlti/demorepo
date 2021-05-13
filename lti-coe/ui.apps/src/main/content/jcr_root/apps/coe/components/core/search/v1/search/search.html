@@ -1,0 +1,43 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-unwrap>
+   Edit Search Component
+</div>
+
+<sly data-sly-use.searchModel="coe.core.models.SearchModel"/>
+<div id="${searchModel.componentId}" class="${wcmmode.edit || wcmmode.design ? '' : 'coe-searchcomp'} ${searchModel.uniqueClassName}" data-path="${currentNode.Path}" data-onloadItemCount="${searchModel.onloadItemCount}">
+
+<div class="col-12 ">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless searchterm"  type="text"  placeholder="Enter Search Text">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success searchbotton" type="button" onclick="getSearchResult(this)">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+
+</div>
+
+<div class="results row">
+
+
+<div class="resultfilters col-sm-3 col-lg-3 col-md-3">
+
+<div class="filterresult">
+
+</div>
+ </div>
+
+<div class="searchresult col-sm-9 col-lg-9 col-md-9">
+
+</div>
+</div>
+
+</div>

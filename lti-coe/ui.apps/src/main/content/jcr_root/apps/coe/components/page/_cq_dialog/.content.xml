@@ -31,6 +31,39 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/include"
                                         path="/mnt/overlay/wcm/foundation/components/basicpage/v1/basicpage/tabs/basic/items/column/items/title"/>
+                                    <customtags
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Custom Tags"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <brandtags
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldDescription="Defines the Brands tags"
+                                                fieldLabel="Brand Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:brandtags">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:tags"/>
+                                            </brandtags>
+                                            <colortag
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                autocreateTag="{Boolean}true"
+                                                fieldDescription="Defines the Color tags"
+                                                fieldLabel="Color Tags"
+                                                multiple="{Boolean}true"
+                                                name="./cq:colortags">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-msm-lockable="cq:tags"/>
+                                            </colortag>
+                                        </items>
+                                    </customtags>
                                     <branding
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Branding"
