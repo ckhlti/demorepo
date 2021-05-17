@@ -1,0 +1,25 @@
+<!--<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<sly data-sly-use.map="coe.core.models.GoogleMap"></sly>
+${map.zipCode}
+<div id="map"></div>
+
+    Async script executes immediately and must be after any DOM elements used in callback.
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5KmES-1CXcvMnyC8DpPKNXaRuw6_zdL8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script> -->
+
+
+<div>
+      <input id="address" type="textbox" placeholder="Enter address" />
+      <input id="submit" type="button" value="Search" />
+</div>
+<br>
+
+<div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQR4UaLO-0sHqhw5SOD7RP4iJoH_243b4&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>

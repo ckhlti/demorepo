@@ -23,9 +23,6 @@
 
 <!-- customer page properties -->
 <sly data-sly-use.pageModel="coe.core.models.CustomPageConfigModel">
-
-	<sly data-sly-test.siteClientLibName="${pageModel.siteClientLibName}" />
-
     <!-- include custom footer css -->
     <sly data-sly-list.footerCSS="${pageModel.footerCSSFiles}">
     	<link rel="stylesheet" href="${footerCSS}" type="text/css">
@@ -35,9 +32,4 @@
 	<sly data-sly-list.footerJS="${pageModel.footerJSFiles}">
     	<link rel="stylesheet" href="${footerJS}" type="text/css">
 	</sly>
-
-    <!-- insert site specific JS files client library-->
-	<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
-	     data-sly-call="${clientlib.js @ categories=siteClientLibName}"/>
-	</sly> 
 </sly>
