@@ -4,6 +4,6 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="cq:Component"
-    jcr:title="PCC V1"
+    jcr:title="PCC V2"
     sling:resourceSuperType="core/wcm/components/form/button/v2/button"
     componentGroup="coe - Core"/>
