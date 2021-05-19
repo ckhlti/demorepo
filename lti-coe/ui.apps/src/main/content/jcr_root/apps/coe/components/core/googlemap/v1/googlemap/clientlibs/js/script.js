@@ -1,17 +1,20 @@
 function initMap() {
-    console.log("inside js")
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: { lat: -34.397, lng: 150.644 },
-  });
-    console.log("inside map")
-  const geocoder = new google.maps.Geocoder();
-  document.getElementById("submit").addEventListener("click", () => {
-    geocodeAddress(geocoder, map);
-  });
-   }
+	var mapProp= {
+		center:new google.maps.LatLng(33.7678358,-84.4906438),
+		zoom:5,
+	};
+	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-  function geocodeAddress(geocoder, resultsMap) {
+	document.getElementById("submit").addEventListener("click", () => {
+    	geocodeAddress(geocoder, map);
+  	});
+
+
+}
+
+
+
+function geocodeAddress(geocoder, resultsMap) {
     const address = document.getElementById("address").value;
     geocoder.geocode({ address: address }, (results, status) => {
       if (status === "OK") {
