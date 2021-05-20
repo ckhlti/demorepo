@@ -113,9 +113,10 @@
                                                             name="./name"/>
                                                         <summary
                                                             jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                             fieldLabel="Summary"
-                                                            name="./summary"/>
+                                                            name="./summary"
+                                                            useFixedInlineToolbar="{Boolean}true"/>
                                                         <ctatext
                                                             jcr:primaryType="nt:unstructured"
                                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -153,9 +154,10 @@
                                                                                 name="./feature_type"/>
                                                                             <desc
                                                                                 jcr:primaryType="nt:unstructured"
-                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                                                                                 fieldLabel="Description"
-                                                                                name="./featureDescription"/>
+                                                                                name="./featureDescription"
+                                                                                useFixedInlineToolbar="{Boolean}true"/>
                                                                         </items>
                                                                     </columns>
                                                                 </items>
