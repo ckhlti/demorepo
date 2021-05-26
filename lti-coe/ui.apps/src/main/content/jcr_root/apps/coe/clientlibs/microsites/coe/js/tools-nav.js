@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
     $(".tools-left-navigation").each(function() {
-        $(this).find(".cmp-navigation__item--level-0").find("a").attr("href","#");
-        $(this).find(".cmp-navigation__item--level-0").find("a").addClass("nav_collapsed");
-        $(this).find(".cmp-navigation__item--level-0").find(".cmp-navigation__group").hide();
-        $(this).find(".cmp-navigation__item--level-0").find("a").click( function() { do_left_nav_open_close($(this));});
+        $(this).find(".cmp-navigation__item--level-0").children("a").attr("href","#");
+        $(this).find(".cmp-navigation__item--level-0").children("a").addClass("nav_collapsed");
+        $(this).find(".cmp-navigation__item--level-0").children(".cmp-navigation__group").hide();
+        $(this).find(".cmp-navigation__item--level-0").children("a").click( function() { do_left_nav_open_close($(this));});
     });
 });
 
